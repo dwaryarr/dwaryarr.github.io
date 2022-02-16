@@ -16,3 +16,11 @@ section {
     width: 1920;
     height: 1080;
 }
+
+.gallery-img {
+    width: 100%;
+}
+
+#gallery .row>* {
+    padding: 0%;
+}
