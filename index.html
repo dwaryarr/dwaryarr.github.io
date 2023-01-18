@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/profile.jpg" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +17,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="styles.css">
 
@@ -52,6 +58,7 @@
 
         <img src="images/profile.jpg" alt="Dwi Arya R" width="200" class="rounded-circle img-thumbnail">
         <h1 class="display-4">Dwi Arya Ramadhani</h1>
+        <h4 class="loc"><i class="fa-solid fa-map-location-dot"></i> Semarang, Indonesia</h4>
         <p class="lead"></p>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#ffffff" fill-opacity="1"
@@ -101,7 +108,8 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <img src="images/projects/webdartgamecorner.png" class="card-img-top" alt="projectpreview">
+                            <img src="images/projects/webdartgamecorner.png" class="card-img-top" alt="DartGameCorner"
+                                id="project1" style="cursor: pointer;">
                             <div class="card-body">
                                 <h5 class="card-title">DartGameCorner</h5>
                                 <p class="card-text">Deskripsi Project....</p>
@@ -111,7 +119,8 @@
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <img src="images/projects/webpasariwak.png" class="card-img-top" alt="projectpreview">
+                            <img src="images/projects/webpasariwak.png" class="card-img-top"
+                                alt="PasarIwak E-Marketplace" id="project2" style="cursor: pointer;">
                             <div class="card-body">
                                 <h5 class="card-title">PasarIwak E-Marketplace</h5>
                                 <p class="card-text">Deskripsi Project....</p>
@@ -121,7 +130,8 @@
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <img src="images/projects/webiotpasariwak.png" class="card-img-top" alt="projectpreview">
+                            <img src="images/projects/webiotpasariwak.png" class="card-img-top" alt="IoT PasarIwak"
+                                id="project3" style="cursor: pointer;">
                             <div class="card-body">
                                 <h5 class="card-title">IoT PasarIwak</h5>
                                 <p class="card-text">Deskripsi Project....</p>
@@ -131,7 +141,8 @@
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <img src="images/projects/websithole.png" class="card-img-top" alt="projectpreview">
+                            <img src="images/projects/websithole.png" class="card-img-top"
+                                alt="SITHOLE - Pengadilan Negeri Kota Semarang" id="project4" style="cursor: pointer;">
                             <div class="card-body">
                                 <h5 class="card-title">SITHOLE - Pengadilan Negeri Kota Semarang</h5>
                                 <p class="card-text">Deskripsi Project....</p>
@@ -140,6 +151,12 @@
                         </div>
                     </div>
 
+                    <!-- ImageModal -->
+                    <div id="imgModal" class="imgmodal">
+                        <span class="close">&times;</span>
+                        <img class="imgmodal-content" id="modalimg">
+                        <div id="caption"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -163,61 +180,55 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-github fa-7x text-center"></i>
-                            <div class="card-body">
+                            <i class="fa-brands fa-github fa-7x text-center m-3"></i>
+                            <div class="card-body text-center">
                                 <h5 class="card-title">GitHub</h5>
-                                <p class="card-text">Deskripsi Project....</p>
-                                <a href="https://dartgamecorner.000webhostapp.com/" target="_blank">Preview</a>
+                                <a href="https://github.com/dwaryarr" target="_blank">Preview</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-twitter fa-7x text-center"></i>
-                            <div class="card-body">
+                            <i class="fa-brands fa-twitter fa-7x text-center m-3"></i>
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Twitter</h5>
-                                <p class="card-text">Deskripsi Project....</p>
-                                <a href="https://pasariwak.com/market" target="_blank">Preview</a>
+                                <a href="https://twitter.com/aryaramdhni_" target="_blank">Preview</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-instagram fa-7x text-center"></i>
-                            <div class="card-body">
+                            <i class="fa-brands fa-instagram fa-7x text-center m-3"></i>
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Instagram</h5>
-                                <p class="card-text">Deskripsi Project....</p>
-                                <a href="https://iot.pasariwak.com/" target="_blank">Preview</a>
+                                <a href="https://www.instagram.com/aryaramdhni_/" target="_blank">Preview</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-facebook fa-7x text-center"></i>
-                            <div class="card-body">
+                            <i class="fa-brands fa-facebook fa-7x text-center m-3"></i>
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Facebook</h5>
-                                <p class="card-text">Deskripsi Project....</p>
-                                <a href="https://pn-semarangkota.go.id/sithole/" target="_blank">Preview</a>
+                                <a href="https://www.facebook.com/aryaramdhni/" target="_blank">Preview</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-discord fa-7x text-center"></i>
-                            <div class="card-body">
+                            <i class="fa-brands fa-discord fa-7x text-center m-3"></i>
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Discord</h5>
-                                <p class="card-text">Deskripsi Project....</p>
-                                <a href="https://pn-semarangkota.go.id/sithole/" target="_blank">Preview</a>
+                                <a href="https://discord.gg/xTU55gVqBV" target="_blank">dwaryar#9476</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-whatsapp fa-7x text-center"></i>
-                            <div class="card-body">
+                            <i class="fa-brands fa-whatsapp fa-7x text-center m-3"></i>
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Whatsapp</h5>
-                                <p class="card-text">Deskripsi Project....</p>
-                                <a href="https://pn-semarangkota.go.id/sithole/" target="_blank">Preview</a>
+                                <a href="https://wa.me/6282138152519" target="_blank">+62 821-3815-2519</a>
                             </div>
                         </div>
                     </div>
@@ -247,21 +258,25 @@
                     <form name="dwiaryar-portoweb-contact-form">
                         <div class="mb-3">
                             <label for="name" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="name" name="nama" aria-describedby="name">
+                            <input type="text" class="form-control" id="name" name="nama" aria-describedby="name"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" aria-describedby="email">
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="email"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="pesan" class="form-label">Pesan</label>
-                            <textarea class="form-control" id="pesan" name="pesan" rows="3"></textarea>
+                            <textarea class="form-control" id="pesan" name="pesan" rows="3" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
-                        <button class="btn btn-primary btn-loading d-none" type="button" disabled>
-                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            Loading...
-                        </button>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
+                            <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Loading...
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -294,6 +309,10 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
 
+        <!-- MDB -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+
         <!-- AOS -->
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
@@ -309,6 +328,44 @@
                 once: true,
                 duration: 1000
             });
+        </script>
+
+        <script>
+            var modal = document.getElementById("imgModal");
+            var img1 = document.getElementById("project1");
+            var img2 = document.getElementById("project2");
+            var img3 = document.getElementById("project3");
+            var img4 = document.getElementById("project4");
+            var modalImg = document.getElementById("modalimg");
+            var captionText = document.getElementById("caption");
+            img1.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+            img2.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+            img3.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+            img4.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
         </script>
 
         <!-- GSAP -->
@@ -337,18 +394,24 @@
                 x: -50,
                 delay: 0.5,
                 ease: 'back'
-
+            });
+            gsap.from('.loc', {
+                duration: 1,
+                opacity: 0,
+                x: -50,
+                delay: 0.5,
+                ease: 'back'
             });
         </script>
 
 
         <!-- Script Google SpreadSheets Contact Form-->
         <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxhgH0NhpnQ_KvDzIpF3xSAhvv9UEr9vc-NbdrsiUAgJz70egEKOgpWtJwzqFzOH54o/exec'
-            const form = document.forms['dartgamecorner-contact-form']
-            const btnKirim = document.querySelector('.btn-kirim')
-            const btnLoading = document.querySelector('.btn-loading')
-            const myAlert = document.querySelector('.my-alert')
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwVo7wkShrI0FFSfT1-LVjLGdvrROuA_PlDNacNmcVoOs66HBo0-KrTTN_sybP7eVHe/exec';
+            const form = document.forms['dwiaryar-portoweb-contact-form'];
+            const btnKirim = document.querySelector('.btn-kirim');
+            const btnLoading = document.querySelector('.btn-loading');
+            const myAlert = document.querySelector('.my-alert');
 
             form.addEventListener('submit', e => {
                 e.preventDefault()
