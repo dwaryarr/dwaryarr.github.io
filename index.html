@@ -3,7 +3,7 @@
 
 <head>
     <!-- favicon -->
-    <link rel="shortcut icon" href="images/profile.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,17 +29,23 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>My Portfolio - Dwi Arya R</title>
+    <title>Portfolio - Dwi Arya Ramadhani</title>
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top" style="background-color: #0d6efd;">
         <div class="container">
-            <a class="navbar-brand" href="#">Dwi Arya R</a>
+            <!-- <a class="navbar-brand" href="#">Dwi Arya Ramadhani</a> -->
+            <a class="navbar-brand" href="#">
+                <img src="images/favicon.ico" alt="logo" width="30" height="24">
+                Dwi Arya Ramadhani
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">
+                    <i class="fa-solid fa-bars mt-1"></i>
+                </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
@@ -56,8 +62,8 @@
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
 
-        <img src="images/profile.jpg" alt="Dwi Arya R" width="200" class="rounded-circle img-thumbnail">
-        <h1 class="display-4">Dwi Arya Ramadhani</h1>
+        <img src="images/profile.png" alt="Dwi Arya R" class="rounded-circle img-thumbnail">
+        <h1 class="display-4 mt-2">Dwi Arya Ramadhani</h1>
         <h4 class="loc"><i class="fa-solid fa-map-location-dot"></i> Semarang, Indonesia</h4>
         <p class="lead"></p>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -76,14 +82,14 @@
                     <h2>About Me</h2>
                 </div>
             </div>
-            <div class="row justify-content-center fs-5 text-center">
-                <div class="col-md-4" data-aos="fade-right" data-aos-offset="350" data-aos-duration="1000">
-                    <p>Saya merupakan mahasiswa Teknik Informatika Universitas Dian Nuswantoro yang memiliki
-                        ketertarikan dan keahlian dalam mengembangkan dan mengelola website.</p>
-                </div>
-                <div class="col-md-4" data-aos="fade-left" data-aos-offset="350" data-aos-delay="200"
-                    data-aos-duration="1000">
-                    <p>Saya telah memiliki pengalaman dalam membuat beberapa project website seperti e-commerce/e-marketplace, </p>
+            <div class="row justify-content-center fs-5" style="text-align: justify;">
+                <div class="col-md-9" data-aos="fade-right" data-aos-offset="350" data-aos-duration="1000">
+                    <p><b>Dwi Arya Ramadhani</b> biasa dipanggil "Arya", saya merupakan mahasiswa Teknik Informatika
+                        Universitas Dian Nuswantoro yang memiliki
+                        ketertarikan dan keahlian dalam mengembangkan dan mengelola aplikasi website maupun mobile.
+                        Memiliki pengalaman dalam membuat aplikasi website seperti e-commerce/marketplace, dashboard
+                        IoT, dan
+                        layanan konsultasi online.</p>
                 </div>
             </div>
         </div>
@@ -107,45 +113,66 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <img src="images/projects/webdartgamecorner.png" class="card-img-top" alt="DartGameCorner"
-                                id="project1" style="cursor: pointer;">
+                            <img src="images/projects/webdartgamecorner.png" class="card-img-top mt-3"
+                                alt="DartGameCorner" id="project1" style="cursor: pointer;">
                             <div class="card-body">
-                                <h5 class="card-title">DartGameCorner</h5>
-                                <p class="card-text">Deskripsi Project....</p>
-                                <a href="https://dartgamecorner.000webhostapp.com/" target="_blank">Preview</a>
+                                <h5 class="card-title" id="projectname1">DartGameCorner</h5>
+                                <p class="card-text text-truncate" id="deskripsi1">Sebuah website e-commerce yang
+                                    menyediakan berbagai produk digital dan layanan consignment game online dengan
+                                    region Asia Pasifik. Pengguna dapat bertransaksi dan melakukan pembayaran secara
+                                    online dengan berbagai macam pilihan payment gateway atau metode pembayaran yang
+                                    telah disediakan.</p>
+                                <a href="https://dartgamecorner.000webhostapp.com/" target="_blank"
+                                    class="mt-auto btn-block text-center">Preview</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <img src="images/projects/webpasariwak.png" class="card-img-top"
+                            <img src="images/projects/webpasariwak.png" class="card-img-top mt-3"
                                 alt="PasarIwak E-Marketplace" id="project2" style="cursor: pointer;">
                             <div class="card-body">
-                                <h5 class="card-title">PasarIwak E-Marketplace</h5>
-                                <p class="card-text">Deskripsi Project....</p>
-                                <a href="https://pasariwak.com/market" target="_blank">Preview</a>
+                                <h5 class="card-title" id="projectname2">PasarIwak E-Marketplace</h5>
+                                <p class="card-text text-truncate" id="deskripsi2">Aplikasi E-Marketplace ikan air tawar
+                                    berbasis website yang menyediakan layanan jual beli untuk kelompok
+                                    pembudidaya/petani ikan air tawar, penjual bibit dan pakan ikan dengan masyarakat
+                                    yang dipantau langsung oleh Dinas Kelautan dan Perikanan setempat. Selain itu
+                                    PasarIwak juga menyediakan layanan rekomendasi untuk pembelian bibit atau pakan ikan
+                                    untuk pembudidaya/petani, serta layanan forum untuk melakukan diskusi secara online
+                                    dengan dinas setempat maupun masyarakat.</p>
+                                <a href="https://pasariwak.com/market" target="_blank"
+                                    class="mt-auto btn-block text-center">Preview</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <img src="images/projects/webiotpasariwak.png" class="card-img-top" alt="IoT PasarIwak"
+                            <img src="images/projects/webiotpasariwak.png" class="card-img-top mt-3" alt="IoT PasarIwak"
                                 id="project3" style="cursor: pointer;">
                             <div class="card-body">
-                                <h5 class="card-title">IoT PasarIwak</h5>
-                                <p class="card-text">Deskripsi Project....</p>
-                                <a href="https://iot.pasariwak.com/" target="_blank">Preview</a>
+                                <h5 class="card-title" id="projectname3">IoT PasarIwak</h5>
+                                <p class="card-text text-truncate" id="deskripsi3">Dashboard dengan menerapkan konsep
+                                    Internet of Things (IoT) untuk memonitoring data
+                                    lingkungan kolam pembudidaya/petani ikan air tawar menggunakan Application
+                                    Programming Interface (API) untuk menerima data lingkungan dari alat sensor Arduino
+                                    secara realtime.
+                                </p>
+                                <a href="https://iot.pasariwak.com/" target="_blank"
+                                    class="mt-auto btn-block text-center">Preview</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <img src="images/projects/websithole.png" class="card-img-top"
+                            <img src="images/projects/websithole.png" class="card-img-top mt-3"
                                 alt="SITHOLE - Pengadilan Negeri Kota Semarang" id="project4" style="cursor: pointer;">
                             <div class="card-body">
-                                <h5 class="card-title">SITHOLE - Pengadilan Negeri Kota Semarang</h5>
-                                <p class="card-text">Deskripsi Project....</p>
-                                <a href="https://pn-semarangkota.go.id/sithole/" target="_blank">Preview</a>
+                                <h5 class="card-title" id="projectname4">SITHOLE - Pengadilan Negeri Kota Semarang</h5>
+                                <p class="card-text text-truncate" id="deskripsi4">Aplikasi layanan konsultasi
+                                    hukum berbasis website yang menyediakan layanan konsultasi berupa meeting
+                                    video online, live chat online, serta pendataan konsultasi offline.</p>
+                                <a href="https://pn-semarangkota.go.id/sithole/" target="_blank"
+                                    class="mt-auto btn-block text-center">Preview</a>
                             </div>
                         </div>
                     </div>
@@ -154,7 +181,8 @@
                     <div id="imgModal" class="imgmodal">
                         <span class="close">&times;</span>
                         <img class="imgmodal-content" id="modalimg">
-                        <div id="caption"></div>
+                        <div class="text-center h4 text-light" id="nameproj"></div>
+                        <div id="caption" style="text-align: justify;"></div>
                     </div>
                 </div>
             </div>
@@ -178,58 +206,75 @@
             <div class="row justify-content-center">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
-                        <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-github fa-7x text-center m-3"></i>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">GitHub</h5>
-                                <a href="https://github.com/dwaryarr" target="_blank">Preview</a>
+                        <a href="https://github.com/dwaryarr" target="_blank" class="text-decoration-none text-body">
+                            <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250"
+                                data-aos-duration="1000">
+                                <i class="fa-brands fa-github fa-7x text-center m-3"></i>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">GitHub</h5>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-twitter fa-7x text-center m-3"></i>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Twitter</h5>
-                                <a href="https://twitter.com/aryaramdhni_" target="_blank">Preview</a>
+                        <a href="https://twitter.com/aryaramdhni_" target="_blank"
+                            class="text-decoration-none text-body">
+                            <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250"
+                                data-aos-duration="1000">
+                                <i class="fa-brands fa-twitter fa-7x text-center m-3"></i>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Twitter</h5>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-instagram fa-7x text-center m-3"></i>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Instagram</h5>
-                                <a href="https://www.instagram.com/aryaramdhni_/" target="_blank">Preview</a>
+                        <a href="https://www.instagram.com/aryaramdhni_/" target="_blank"
+                            class="text-decoration-none text-body">
+                            <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250"
+                                data-aos-duration="1000">
+                                <i class="fa-brands fa-instagram fa-7x text-center m-3"></i>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Instagram</h5>
+
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-facebook fa-7x text-center m-3"></i>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Facebook</h5>
-                                <a href="https://www.facebook.com/aryaramdhni/" target="_blank">Preview</a>
+                        <a href="https://www.facebook.com/aryaramdhni/" target="_blank"
+                            class="text-decoration-none text-body">
+                            <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250"
+                                data-aos-duration="1000">
+                                <i class="fa-brands fa-facebook fa-7x text-center m-3"></i>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Facebook</h5>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-discord fa-7x text-center m-3"></i>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Discord</h5>
-                                <a href="https://discord.gg/xTU55gVqBV" target="_blank">dwaryar#9476</a>
+                        <a href="https://discord.gg/xTU55gVqBV" target="_blank" class="text-decoration-none text-body">
+                            <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250"
+                                data-aos-duration="1000">
+                                <i class="fa-brands fa-discord fa-7x text-center m-3"></i>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Discord - dwaryar#9476</h5>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <i class="fa-brands fa-whatsapp fa-7x text-center m-3"></i>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Whatsapp</h5>
-                                <a href="https://wa.me/6282138152519" target="_blank">+62 821-3815-2519</a>
+                        <a href="https://wa.me/6282138152519" target="_blank" class="text-decoration-none text-body">
+                            <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250"
+                                data-aos-duration="1000">
+                                <i class="fa-brands fa-whatsapp fa-7x text-center m-3"></i>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Whatsapp</h5>
+
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                 </div>
@@ -294,9 +339,8 @@
             <div class="row">
                 <div class="col text-center">
                     <p>Created with <i class="text-danger fa-solid fa-heart fa-beat"
-                            style="--fa-animation-duration: 2s;"></i> by <a
-                            href="https://www.instagram.com/aryaramdhni_/" target="_blank"
-                            class="text-white fw-bold">Dwi Arya R</a></p>
+                            style="--fa-animation-duration: 2s;"></i> by <a href="https://github.com/dwaryarr/"
+                            target="_blank" class="text-white fw-bold">dwaryarr</a></p>
 
                 </div>
             </div>
@@ -314,6 +358,7 @@
 
         <!-- AOS -->
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
         <script>
             const galleryImage = document.querySelectorAll('.gallery-img');
 
@@ -336,26 +381,39 @@
             var img3 = document.getElementById("project3");
             var img4 = document.getElementById("project4");
             var modalImg = document.getElementById("modalimg");
+            var nameproj = document.getElementById("nameproj")
+            var projectname1 = document.getElementById("projectname1");
+            var projectname2 = document.getElementById("projectname2");
+            var projectname3 = document.getElementById("projectname3");
+            var projectname4 = document.getElementById("projectname4");
             var captionText = document.getElementById("caption");
+            var desk1 = document.getElementById("deskripsi1");
+            var desk2 = document.getElementById("deskripsi2");
+            var desk3 = document.getElementById("deskripsi3");
+            var desk4 = document.getElementById("deskripsi4");
             img1.onclick = function () {
                 modal.style.display = "block";
                 modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
+                nameproj.innerHTML = projectname1.innerHTML;
+                captionText.innerHTML = desk1.innerHTML;
             }
             img2.onclick = function () {
                 modal.style.display = "block";
                 modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
+                nameproj.innerHTML = projectname2.innerHTML;
+                captionText.innerHTML = desk2.innerHTML;
             }
             img3.onclick = function () {
                 modal.style.display = "block";
                 modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
+                nameproj.innerHTML = projectname3.innerHTML;
+                captionText.innerHTML = desk3.innerHTML;
             }
             img4.onclick = function () {
                 modal.style.display = "block";
                 modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
+                nameproj.innerHTML = projectname4.innerHTML;
+                captionText.innerHTML = desk4.innerHTML;
             }
 
             // Get the <span> element that closes the modal
@@ -373,7 +431,7 @@
         <script>
             gsap.registerPlugin(TextPlugin);
             gsap.to('.lead', {
-                duration: 1.5, delay: 1.5, text: 'Web Developer'
+                duration: 1.5, delay: 1.5, text: 'Fullstack Developer'
             });
             gsap.from('.jumbotron img', {
                 duration: 1,
