@@ -62,7 +62,7 @@
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
 
-        <img src="images/profile.png" alt="Dwi Arya R" class="rounded-circle img-thumbnail">
+        <img src="images/profile.png" alt="Dwi Arya R" class="rounded-circle shadow">
         <h1 class="display-4 mt-2">Dwi Arya Ramadhani</h1>
         <h4 class="loc"><i class="fa-solid fa-map-location-dot"></i> Semarang, Indonesia</h4>
         <p class="lead"></p>
@@ -88,8 +88,7 @@
                         Universitas Dian Nuswantoro yang memiliki
                         ketertarikan dan keahlian dalam mengembangkan dan mengelola aplikasi website maupun mobile.
                         Memiliki pengalaman dalam membuat aplikasi website seperti e-commerce/marketplace, dashboard
-                        IoT, dan
-                        layanan konsultasi online.</p>
+                        IoT, dan layanan konsultasi online.</p>
                 </div>
             </div>
         </div>
@@ -123,7 +122,7 @@
                                     online dengan berbagai macam pilihan payment gateway atau metode pembayaran yang
                                     telah disediakan.</p>
                                 <a href="https://dartgamecorner.000webhostapp.com/" target="_blank"
-                                    class="mt-auto btn-block text-center">Preview</a>
+                                    class="mt-auto btn-block text-center" id="prev1">Preview</a>
                             </div>
                         </div>
                     </div>
@@ -141,7 +140,7 @@
                                     untuk pembudidaya/petani, serta layanan forum untuk melakukan diskusi secara online
                                     dengan dinas setempat maupun masyarakat.</p>
                                 <a href="https://pasariwak.com/market" target="_blank"
-                                    class="mt-auto btn-block text-center">Preview</a>
+                                    class="mt-auto btn-block text-center" id="prev2">Preview</a>
                             </div>
                         </div>
                     </div>
@@ -158,7 +157,7 @@
                                     secara realtime.
                                 </p>
                                 <a href="https://iot.pasariwak.com/" target="_blank"
-                                    class="mt-auto btn-block text-center">Preview</a>
+                                    class="mt-auto btn-block text-center" id="prev3">Preview</a>
                             </div>
                         </div>
                     </div>
@@ -172,7 +171,23 @@
                                     hukum berbasis website yang menyediakan layanan konsultasi berupa meeting
                                     video online, live chat online, serta pendataan konsultasi offline.</p>
                                 <a href="https://pn-semarangkota.go.id/sithole/" target="_blank"
-                                    class="mt-auto btn-block text-center">Preview</a>
+                                    class="mt-auto btn-block text-center" id="prev4">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
+                            <img src="images/projects/qrbarcodescannerapp.png" class="card-img-top mt-3"
+                                alt="QRBarcode Scanner App" id="project5" style="cursor: pointer;">
+                            <div class="card-body">
+                                <h5 class="card-title" id="projectname5">QRBarcode Scanner App</h5>
+                                <p class="card-text text-truncate" id="deskripsi5">Aplikasi berbasis android ini
+                                    bermanfaat untuk memberitahu pengguna pesan yang tersimpan pada qrcode atau barcode
+                                    tersebut. Pada versi 1.0 terdapat fitur scanner, tampilan hasil scan, buka hasil
+                                    scan melalui browser, simpan atau copy hasil scan kedalam clipboard android, dan
+                                    share hasil scan.</p>
+                                <a href="https://github.com/dwaryarr/QRBarcode-Scanner/releases/tag/v1.0/"
+                                    target="_blank" class="mt-auto btn-block text-center" id="prev5">Preview</a>
                             </div>
                         </div>
                     </div>
@@ -181,6 +196,10 @@
                     <div id="imgModal" class="imgmodal">
                         <span class="close">&times;</span>
                         <img class="imgmodal-content" id="modalimg">
+                        <center>
+                            <a href="#" class="btn btn-outline-primary" id="prevbtn" target="_blank"
+                                style="margin-bottom: 2%; margin-top: -100%;">Preview</a>
+                        </center>
                         <div class="text-center h4 text-light" id="nameproj"></div>
                         <div id="caption" style="text-align: justify;"></div>
                     </div>
@@ -359,7 +378,7 @@
         <!-- AOS -->
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-        <script>
+        <script type="text/javascript">
             const galleryImage = document.querySelectorAll('.gallery-img');
 
             galleryImage.forEach((img, i) => {
@@ -374,46 +393,65 @@
             });
         </script>
 
-        <script>
+        <script type="text/javascript">
             var modal = document.getElementById("imgModal");
+            var modalImg = document.getElementById("modalimg");
+            var captionText = document.getElementById("caption");
             var img1 = document.getElementById("project1");
             var img2 = document.getElementById("project2");
             var img3 = document.getElementById("project3");
             var img4 = document.getElementById("project4");
-            var modalImg = document.getElementById("modalimg");
-            var nameproj = document.getElementById("nameproj")
+            var img5 = document.getElementById("project5");
             var projectname1 = document.getElementById("projectname1");
             var projectname2 = document.getElementById("projectname2");
             var projectname3 = document.getElementById("projectname3");
             var projectname4 = document.getElementById("projectname4");
-            var captionText = document.getElementById("caption");
+            var projectname5 = document.getElementById("projectname5");
             var desk1 = document.getElementById("deskripsi1");
             var desk2 = document.getElementById("deskripsi2");
             var desk3 = document.getElementById("deskripsi3");
             var desk4 = document.getElementById("deskripsi4");
+            var desk5 = document.getElementById("deskripsi5");
+            var prev1 = document.getElementById("prev1");
+            var prev2 = document.getElementById("prev2");
+            var prev3 = document.getElementById("prev3");
+            var prev4 = document.getElementById("prev4");
+            var prev5 = document.getElementById("prev5");
+            var prevbtn = document.getElementById("prevbtn");
             img1.onclick = function () {
                 modal.style.display = "block";
                 modalImg.src = this.src;
+                prevbtn.href = prev1.href;
                 nameproj.innerHTML = projectname1.innerHTML;
                 captionText.innerHTML = desk1.innerHTML;
             }
             img2.onclick = function () {
                 modal.style.display = "block";
                 modalImg.src = this.src;
+                prevbtn.href = prev2.href;
                 nameproj.innerHTML = projectname2.innerHTML;
                 captionText.innerHTML = desk2.innerHTML;
             }
             img3.onclick = function () {
                 modal.style.display = "block";
                 modalImg.src = this.src;
+                prevbtn.href = prev3.href;
                 nameproj.innerHTML = projectname3.innerHTML;
                 captionText.innerHTML = desk3.innerHTML;
             }
             img4.onclick = function () {
                 modal.style.display = "block";
                 modalImg.src = this.src;
+                prevbtn.href = prev4.href;
                 nameproj.innerHTML = projectname4.innerHTML;
                 captionText.innerHTML = desk4.innerHTML;
+            }
+            img5.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                prevbtn.href = prev5.href;
+                nameproj.innerHTML = projectname5.innerHTML;
+                captionText.innerHTML = desk5.innerHTML;
             }
 
             // Get the <span> element that closes the modal
@@ -428,7 +466,7 @@
         <!-- GSAP -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
-        <script>
+        <script type="text/javascript">
             gsap.registerPlugin(TextPlugin);
             gsap.to('.lead', {
                 duration: 1.5, delay: 1.5, text: 'Fullstack Developer'
@@ -463,7 +501,7 @@
 
 
         <!-- Script Google SpreadSheets Contact Form-->
-        <script>
+        <script type="text/javascript">
             const scriptURL = 'https://script.google.com/macros/s/AKfycbwVo7wkShrI0FFSfT1-LVjLGdvrROuA_PlDNacNmcVoOs66HBo0-KrTTN_sybP7eVHe/exec';
             const form = document.forms['dwiaryar-portoweb-contact-form'];
             const btnKirim = document.querySelector('.btn-kirim');
