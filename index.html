@@ -177,17 +177,30 @@
                     </div>
                     <div class="col">
                         <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
-                            <img src="images/projects/qrbarcodescannerapp.png" class="card-img-top mt-3"
+                            <img src="images/projects/iotpasariwakapp.png" class="card-img-top mt-3"
                                 alt="QRBarcode Scanner App" id="project5" style="cursor: pointer;">
                             <div class="card-body">
-                                <h5 class="card-title" id="projectname5">QRBarcode Scanner App</h5>
-                                <p class="card-text text-truncate" id="deskripsi5">Aplikasi berbasis android ini
+                                <h5 class="card-title" id="projectname5">Iot PasarIwak App</h5>
+                                <p class="card-text text-truncate" id="deskripsi5">Aplikasi berbasis android yang
+                                    bermanfaat untuk memantau kolam petani ikan dengan cara menampilkan data ph, suhu,
+                                    dan intensitas cahaya secara realtime.</p>
+                                <a href="#" target="_blank" class="mt-auto btn-block text-center" id="prev5">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100" data-aos="zoom-out-up" data-aos-offset="250" data-aos-duration="1000">
+                            <img src="images/projects/qrbarcodescannerapp.png" class="card-img-top mt-3"
+                                alt="QRBarcode Scanner App" id="project6" style="cursor: pointer;">
+                            <div class="card-body">
+                                <h5 class="card-title" id="projectname6">QRBarcode Scanner App</h5>
+                                <p class="card-text text-truncate" id="deskripsi6">Aplikasi berbasis android ini
                                     bermanfaat untuk memberitahu pengguna pesan yang tersimpan pada qrcode atau barcode
                                     tersebut. Pada versi 1.0 terdapat fitur scanner, tampilan hasil scan, buka hasil
                                     scan melalui browser, simpan atau copy hasil scan kedalam clipboard android, dan
                                     share hasil scan.</p>
                                 <a href="https://github.com/dwaryarr/QRBarcode-Scanner/releases/tag/v1.0/"
-                                    target="_blank" class="mt-auto btn-block text-center" id="prev5">Preview</a>
+                                    target="_blank" class="mt-auto btn-block text-center" id="prev6">Preview</a>
                             </div>
                         </div>
                     </div>
@@ -393,75 +406,7 @@
             });
         </script>
 
-        <script type="text/javascript">
-            var modal = document.getElementById("imgModal");
-            var modalImg = document.getElementById("modalimg");
-            var captionText = document.getElementById("caption");
-            var img1 = document.getElementById("project1");
-            var img2 = document.getElementById("project2");
-            var img3 = document.getElementById("project3");
-            var img4 = document.getElementById("project4");
-            var img5 = document.getElementById("project5");
-            var projectname1 = document.getElementById("projectname1");
-            var projectname2 = document.getElementById("projectname2");
-            var projectname3 = document.getElementById("projectname3");
-            var projectname4 = document.getElementById("projectname4");
-            var projectname5 = document.getElementById("projectname5");
-            var desk1 = document.getElementById("deskripsi1");
-            var desk2 = document.getElementById("deskripsi2");
-            var desk3 = document.getElementById("deskripsi3");
-            var desk4 = document.getElementById("deskripsi4");
-            var desk5 = document.getElementById("deskripsi5");
-            var prev1 = document.getElementById("prev1");
-            var prev2 = document.getElementById("prev2");
-            var prev3 = document.getElementById("prev3");
-            var prev4 = document.getElementById("prev4");
-            var prev5 = document.getElementById("prev5");
-            var prevbtn = document.getElementById("prevbtn");
-            img1.onclick = function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                prevbtn.href = prev1.href;
-                nameproj.innerHTML = projectname1.innerHTML;
-                captionText.innerHTML = desk1.innerHTML;
-            }
-            img2.onclick = function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                prevbtn.href = prev2.href;
-                nameproj.innerHTML = projectname2.innerHTML;
-                captionText.innerHTML = desk2.innerHTML;
-            }
-            img3.onclick = function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                prevbtn.href = prev3.href;
-                nameproj.innerHTML = projectname3.innerHTML;
-                captionText.innerHTML = desk3.innerHTML;
-            }
-            img4.onclick = function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                prevbtn.href = prev4.href;
-                nameproj.innerHTML = projectname4.innerHTML;
-                captionText.innerHTML = desk4.innerHTML;
-            }
-            img5.onclick = function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                prevbtn.href = prev5.href;
-                nameproj.innerHTML = projectname5.innerHTML;
-                captionText.innerHTML = desk5.innerHTML;
-            }
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function () {
-                modal.style.display = "none";
-            }
-        </script>
+        <script type="text/javascript" src="./scripts.js"></script>
 
         <!-- GSAP -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -497,31 +442,6 @@
                 delay: 0.5,
                 ease: 'back'
             });
-        </script>
-
-
-        <!-- Script Google SpreadSheets Contact Form-->
-        <script type="text/javascript">
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbwVo7wkShrI0FFSfT1-LVjLGdvrROuA_PlDNacNmcVoOs66HBo0-KrTTN_sybP7eVHe/exec';
-            const form = document.forms['dwiaryar-portoweb-contact-form'];
-            const btnKirim = document.querySelector('.btn-kirim');
-            const btnLoading = document.querySelector('.btn-loading');
-            const myAlert = document.querySelector('.my-alert');
-
-            form.addEventListener('submit', e => {
-                e.preventDefault()
-                btnLoading.classList.toggle('d-none')
-                btnKirim.classList.toggle('d-none')
-                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                    .then(response => {
-                        btnLoading.classList.toggle('d-none')
-                        btnKirim.classList.toggle('d-none')
-                        myAlert.classList.toggle('d-none')
-                        form.reset()
-                        console.log('Success!', response)
-                    })
-                    .catch(error => console.error('Error!', error.message))
-            })
         </script>
 </body>
 
