@@ -7,24 +7,28 @@ var img3 = document.getElementById("project3");
 var img4 = document.getElementById("project4");
 var img5 = document.getElementById("project5");
 var img6 = document.getElementById("project6");
+var img7 = document.getElementById("project7");
 var projectname1 = document.getElementById("projectname1");
 var projectname2 = document.getElementById("projectname2");
 var projectname3 = document.getElementById("projectname3");
 var projectname4 = document.getElementById("projectname4");
 var projectname5 = document.getElementById("projectname5");
 var projectname6 = document.getElementById("projectname6");
+var projectname7 = document.getElementById("projectname7");
 var desk1 = document.getElementById("deskripsi1");
 var desk2 = document.getElementById("deskripsi2");
 var desk3 = document.getElementById("deskripsi3");
 var desk4 = document.getElementById("deskripsi4");
 var desk5 = document.getElementById("deskripsi5");
 var desk6 = document.getElementById("deskripsi6");
+var desk7 = document.getElementById("deskripsi7");
 var prev1 = document.getElementById("prev1");
 var prev2 = document.getElementById("prev2");
 var prev3 = document.getElementById("prev3");
 var prev4 = document.getElementById("prev4");
 var prev5 = document.getElementById("prev5");
 var prev6 = document.getElementById("prev6");
+var prev7 = document.getElementById("prev7");
 var prevbtn = document.getElementById("prevbtn");
 img1.onclick = function () {
     modal.style.display = "block";
@@ -67,6 +71,13 @@ img6.onclick = function () {
     prevbtn.href = prev6.href;
     nameproj.innerHTML = projectname6.innerHTML;
     captionText.innerHTML = desk6.innerHTML;
+}
+img7.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    prevbtn.href = prev7.href;
+    nameproj.innerHTML = projectname7.innerHTML;
+    captionText.innerHTML = desk7.innerHTML;
 }
 
 // Get the <span> element that closes the modal
