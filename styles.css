@@ -1,112 +1,140 @@
 .jumbotron {
-    padding-top: 6rem;
-    background-color: #e2edff;
+  padding-top: 6rem;
+  background-color: #e2edff;
 }
 
 #projects {
-    padding-top: 2rem;
-    background-color: #e2edff;
+  padding-top: 2rem;
+  background-color: #e2edff;
 }
 
 section {
-    padding-top: 6rem;
+  padding-top: 6rem;
+}
+
+.profile-img {
+  width: 120px;
+  object-fit: cover;
+  border-radius: 5%;
+  border: 3px solid #ffffff3b;
+  margin-bottom: 1rem;
 }
 
 .img-projects {
-    width: 1920;
-    height: 1080;
+  width: 1920;
+  height: 1080;
 }
 
 .gallery-img {
-    width: 75%;
+  width: 75%;
 }
 
 #gallery .row>* {
-    padding: 0%;
+  padding: 0%;
 }
 
 /* images projects */
 /* The Modal (background) */
 .imgmodal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 200px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 200px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.imgmodal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1280px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+  margin-bottom: 150px
+}
+
+/* Add Animation */
+.imgmodal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0)
   }
 
-  /* Modal Content (image) */
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 95px;
+  right: 95px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
   .imgmodal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 1280px;
+    width: 100%;
   }
+}
 
-  /* Caption of Modal Image */
-  #caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-    margin-bottom: 150px
-  }
-
-  /* Add Animation */
-  .imgmodal-content, #caption {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-  }
-
-  @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)}
-    to {-webkit-transform:scale(1)}
-  }
-
-  @keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-  }
-
-  /* The Close Button */
-  .close {
-    position: absolute;
-    top: 95px;
-    right: 95px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  /* 100% Image Width on Smaller Screens */
-  @media only screen and (max-width: 700px){
-    .imgmodal-content {
-      width: 100%;
-    }
-  }
-
-  /* Card Hover */
-  .card:hover{
-    transform: scale(1.05);
- box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+/* Card Hover */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
