@@ -1,0 +1,65 @@
+[
+    {
+      "name": "DartGameCorner",
+      "description": "Sebuah website e-commerce yang menyediakan berbagai produk digital dan layanan consignment game online dengan region Asia Pasifik. Pengguna dapat bertransaksi dan melakukan pembayaran secara online dengan berbagai macam pilihan payment gateway atau metode pembayaran yang telah disediakan.",
+      "image": "webdartgamecorner.png",
+      "link": "https://dartgamecorner.000webhostapp.com/",
+      "technology": "CodeIgniter 3, MySQL, Bootstrap 4, MidTrans API"
+    },
+    {
+      "name": "PasarIwak E-Marketplace",
+      "description": "Aplikasi E-Marketplace ikan air tawar berbasis website yang menyediakan layanan jual beli untuk kelompok pembudidaya/petani ikan air tawar, penjual bibit dan pakan ikan dengan masyarakat yang dipantau langsung oleh Dinas Kelautan dan Perikanan setempat. Selain itu PasarIwak juga menyediakan layanan rekomendasi untuk pembelian bibit atau pakan ikan untuk pembudidaya/petani, serta layanan forum untuk melakukan diskusi secara online dengan dinas setempat maupun masyarakat.",
+      "image": "webpasariwak.png",
+      "link": "https://pasariwak.com/market",
+      "technology": "CodeIgniter 3, MySQL, Bootstrap 4, MidTrans API"
+    },
+    {
+      "name": "IoT PasarIwak",
+      "description": "Dashboard dengan menerapkan konsep Internet of Things (IoT) untuk memonitoring data lingkungan kolam pembudidaya/petani ikan air tawar menggunakan Application Programming Interface (API) untuk menerima data lingkungan dari alat sensor Arduino secara realtime.",
+      "image": "webiotpasariwak.png",
+      "link": "https://iot.pasariwak.com/",
+      "technology": "CodeIgniter 3, MySQL, Bootstrap 4, Arduino"
+    },
+    {
+      "name": "SITHOLE - Pengadilan Negeri Kota Semarang",
+      "description": "Aplikasi layanan konsultasi hukum berbasis website yang menyediakan layanan konsultasi berupa meeting video online, live chat online, serta pendataan konsultasi offline.",
+      "image": "websithole.png",
+      "link": "https://pn-semarangkota.go.id/sithole/",
+      "technology": "CodeIgniter 3, MySQL, Bootstrap 4, Jitsi Meet API"
+    },
+    {
+      "name": "IoT PasarIwak App",
+      "description": "Aplikasi berbasis android yang bermanfaat untuk memantau kolam petani ikan dengan cara menampilkan data ph, suhu, dan intensitas cahaya secara realtime.",
+      "image": "iotpasariwakapp.png",
+      "link": "#",
+      "technology": "Java, Arduino"
+    },
+    {
+      "name": "QRBarcode Scanner App",
+      "description": "Aplikasi berbasis android ini bermanfaat untuk memberitahu pengguna pesan yang tersimpan pada qrcode atau barcode tersebut. Pada versi 1.0 terdapat fitur scanner, tampilan hasil scan, buka hasil scan melalui browser, simpan atau copy hasil scan kedalam clipboard android, dan share hasil scan.",
+      "image": "qrbarcodescannerapp.png",
+      "link": "https://github.com/dwaryarr/QRBarcode-Scanner/releases/tag/v1.0/",
+      "technology": "Java, ZXing Library"
+    },
+    {
+      "name": "LSP UDINUS Website",
+      "description": "Aplikasi berbasis website terdapat dua bagian yaitu halaman landing page dan halaman user yang terdiri dari beberapa tingkatan user. Beberapa fitur diantaranya yaitu pendaftaran asesmen atau sertifikasi, pelaksanaan asesmen mandiri, mengelola data sertifikasi, serta mencetak output sertifikasi dari Lembaga Sertifikasi Profesi Universitas Dian Nuswantoro atau LSP UDINUS.",
+      "image": "weblspudinus.png",
+      "link": "https://lsp.dinus.ac.id/",
+      "technology": "CodeIgniter 3, MySQL, Bootstrap 4"
+    },
+    {
+      "name": "Karya Indonesia Website",
+      "description": "Platform berbasis website yang menyediakan layanan jual beli karya entertainment seperti music serta royalty.",
+      "image": "karyaindonesia.jpg",
+      "link": "https://prototype-karya-indonesia.000webhostapp.com/",
+      "technology": "CodeIgniter 3, MySQL, Bootstrap 5"
+    },
+    {
+      "name": "Learning Management System (LMS) Inkaedu.id",
+      "description": "Aplikasi berbasis website yang menyediakan layanan pembelajaran online dengan fitur-fitur seperti pembelajaran online, ujian online, dan forum diskusi.",
+      "image": "weblmsinkaedu.png",
+      "link": "https://inkaedu.id/",
+      "technology": "CodeIgniter 3, ReactJS, MySQL, Bootstrap 5"
+    }
+  ]
