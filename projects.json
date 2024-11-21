@@ -59,7 +59,7 @@
       "name": "Learning Management System (LMS) Inkaedu.id",
       "description": "Aplikasi berbasis website yang menyediakan layanan pembelajaran online dengan fitur-fitur seperti pembelajaran online, ujian online, dan forum diskusi.",
       "image": "weblmsinkaedu.png",
-      "link": "https://inkaedu.id/",
+      "link": "https://lpkamdal-inkalindo.id/",
       "technology": "CodeIgniter 3, ReactJS, MySQL, Bootstrap 5"
     }
   ]
