@@ -1,4 +1,5 @@
 var dataProjects = [];
+const totalProjects = document.getElementById("totalProjects");
 var projectList = document.getElementById("projectList");
 fetch("projects.json")
   .then((response) => response.json())
@@ -35,6 +36,7 @@ fetch("projects.json")
                         `;
         projectList.innerHTML += projectHTML;
       });
+      totalProjects.innerHTML = data.length;
     } else {
       console.error("Data is not an array");
     }

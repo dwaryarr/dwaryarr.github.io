@@ -51,7 +51,7 @@
     {
       "name": "Karya Indonesia Website",
       "description": "Platform berbasis website yang menyediakan layanan jual beli karya entertainment seperti music serta royalty.",
-      "image": "karyaindonesia.jpg",
+      "image": "webkaryaindonesia.jpg",
       "link": "https://prototype-karya-indonesia.000webhostapp.com/",
       "technology": "CodeIgniter 3, MySQL, Bootstrap 5"
     },
@@ -61,5 +61,12 @@
       "image": "weblmsinkaedu.png",
       "link": "https://lpkamdal-inkalindo.id/",
       "technology": "CodeIgniter 3, ReactJS, MySQL, Bootstrap 5"
+    },
+    {
+      "name":"PT. Mitra Inovasi Utama Company Profile Website",
+      "description":"Aplikasi berbasis website yang berisi informasi tentang perusahaan PT. Mitra Inovasi Utama.",
+      "image":"webptmiu.png",
+      "link":"https://mitra-inovasiutama.com/",
+      "technology":"HTML, CSS, JavaScript, Bootstrap 5"
     }
   ]
