@@ -1,0 +1,9 @@
+[
+  { "id": "github", "label": "GitHub", "url": "https://github.com/yourusername", "icon": "Github" },
+  { "id": "linkedin", "label": "LinkedIn", "url": "https://linkedin.com/in/yourusername", "icon": "Linkedin" },
+  { "id": "instagram", "label": "Instagram", "url": "https://instagram.com/yourusername", "icon": "Instagram" },
+  { "id": "facebook", "label": "Facebook", "url": "https://facebook.com/yourusername", "icon": "Facebook" },
+  { "id": "twitter", "label": "Twitter / X", "url": "https://x.com/yourusername", "icon": "Twitter" },
+  { "id": "email", "label": "Email", "url": "mailto:you@example.com", "icon": "Mail" },
+  { "id": "whatsapp", "label": "WhatsApp", "url": "https://wa.me/6281234567890", "icon": "MessageCircle" }
+]

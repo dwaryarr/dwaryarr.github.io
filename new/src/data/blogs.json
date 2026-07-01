@@ -1,0 +1,26 @@
+[
+  {
+    "id": "blog-1",
+    "slug": "building-glassmorphism-ui-with-tailwind",
+    "title": "Building Glassmorphism UI with Tailwind CSS",
+    "excerpt": "A practical guide to creating elegant frosted-glass interfaces using Tailwind utilities and CSS variables.",
+    "coverImage": "/assets/blog/glassmorphism.png",
+    "category": "Frontend",
+    "tags": ["tailwindcss", "css", "design"],
+    "author": "Your Name",
+    "date": "2026-05-10",
+    "content": "## Introduction\n\nGlassmorphism has become a defining aesthetic in modern interfaces, popularized by products like macOS Big Sur and apps like Linear. In this post, we'll build a reusable glass-card component with Tailwind CSS.\n\n## The core recipe\n\nThe effect relies on three CSS properties working together:\n\n```css\n.glass {\n  background: rgba(255, 255, 255, 0.04);\n  backdrop-filter: blur(20px);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n}\n```\n\n## Adding depth with glow\n\nTo make cards feel alive, pair the glass effect with a soft neon glow on hover:\n\n```css\n.glass-card:hover {\n  box-shadow: 0 0 40px var(--accent-soft);\n}\n```\n\n## Performance considerations\n\n`backdrop-filter` can be expensive on low-end devices. Limit the number of simultaneously blurred elements and avoid animating blur radius directly.\n\n## Conclusion\n\nGlassmorphism works best in dark themes with vibrant accent colors. Combine it with subtle motion (Framer Motion) for a premium feel."
+  },
+  {
+    "id": "blog-2",
+    "slug": "vite-vs-cra-2026",
+    "title": "Why I Migrated From Create React App to Vite",
+    "excerpt": "A breakdown of the build time, DX, and bundle size improvements after switching to Vite.",
+    "coverImage": "/assets/blog/vite.png",
+    "category": "Tooling",
+    "tags": ["vite", "react", "performance"],
+    "author": "Your Name",
+    "date": "2026-02-18",
+    "content": "## Why migrate?\n\nCreate React App had been unmaintained for a while, and our local dev server startup time had crept up to nearly 30 seconds.\n\n## The migration process\n\n1. Install Vite and the React plugin\n2. Move `public/index.html` to the project root and adjust script tags\n3. Replace `process.env` references with `import.meta.env`\n4. Update absolute imports via `vite.config.js`\n\n```bash\nnpm install vite @vitejs/plugin-react -D\n```\n\n## Results\n\nDev server cold start dropped from ~28s to under 1s thanks to native ESM and esbuild pre-bundling. Production build times improved roughly 3x.\n\n## Final thoughts\n\nIf you're still on CRA, the migration pays for itself within a single sprint."
+  }
+]

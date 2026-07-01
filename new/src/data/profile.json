@@ -1,0 +1,14 @@
+{
+  "name": "Arya",
+  "title": "Full-Stack Developer & Product Designer",
+  "tagline": "I build fast, elegant, and accessible digital experiences.",
+  "bio": "I'm a full-stack developer specializing in modern web applications. I love crafting clean interfaces, robust systems, and delightful user experiences using React, Node.js, and cloud platforms.",
+  "location": "Jakarta, Indonesia",
+  "email": "you@example.com",
+  "phone": "+62 812-3456-7890",
+  "avatar": "/assets/avatar.png",
+  "resumeUrl": "/assets/resume.pdf",
+  "available": true,
+  "yearsOfExperience": 5,
+  "languages": ["English", "Indonesian"]
+}

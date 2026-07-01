@@ -1,0 +1,11 @@
+[
+  {
+    "id": "edu-1",
+    "institution": "University of Indonesia",
+    "degree": "B.Sc. in Computer Science",
+    "startDate": "2017-08",
+    "endDate": "2021-06",
+    "description": "Focused on software engineering and human-computer interaction.",
+    "gpa": "3.7/4.0"
+  }
+]
