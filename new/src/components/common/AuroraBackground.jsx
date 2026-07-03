@@ -5,11 +5,13 @@
  */
 export default function AuroraBackground() {
   return (
-    <div aria-hidden="true" className="fixed inset-0 -z-10 overflow-hidden bg-ink-950">
+    <div
+      aria-hidden="true"
+      className="fixed inset-0 -z-10 overflow-hidden bg-ink-950">
       <div className="absolute inset-0 bg-grid bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
-      <div className="absolute left-1/4 top-0 h-[500px] w-[500px] rounded-full bg-aurora-1 blur-3xl animate-aurora" />
-      <div className="absolute right-0 top-1/3 h-[600px] w-[600px] rounded-full bg-aurora-2 blur-3xl animate-aurora [animation-delay:-6s]" />
-      <div className="absolute bottom-0 left-1/3 h-[550px] w-[550px] rounded-full bg-aurora-3 blur-3xl animate-aurora [animation-delay:-12s]" />
+      <div className="absolute left-1/4 top-0 h-[380px] w-[380px] rounded-full bg-aurora-1 blur-[70px] animate-aurora" />
+      <div className="absolute right-0 top-1/3 h-[450px] w-[450px] rounded-full bg-aurora-2 blur-[80px] animate-aurora [animation-delay:-6s]" />
+      <div className="absolute bottom-0 left-1/3 h-[420px] w-[420px] rounded-full bg-aurora-3 blur-[80px] animate-aurora [animation-delay:-12s]" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink-950" />
     </div>
   );

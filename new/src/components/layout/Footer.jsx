@@ -1,12 +1,28 @@
-import { Github, Linkedin, Instagram, Facebook, Twitter, Mail, MessageCircle } from 'lucide-react';
-import { useTranslation } from '../../i18n/I18nProvider';
-import { socialsStore } from '../../lib/stores';
+import {
+  Github,
+  Linkedin,
+  Instagram,
+  Facebook,
+  Twitter,
+  Mail,
+  MessageCircle,
+} from "lucide-react";
+import { useTranslation } from "../../i18n/I18nProvider";
+import socials from "../../data/socials.json";
+import webConfig from "../../data/webConfig.json";
 
-const ICONS = { Github, Linkedin, Instagram, Facebook, Twitter, Mail, MessageCircle };
+const ICONS = {
+  Github,
+  Linkedin,
+  Instagram,
+  Facebook,
+  Twitter,
+  Mail,
+  MessageCircle,
+};
 
 export default function Footer() {
   const { t } = useTranslation();
-  const socials = socialsStore.getAll();
 
   return (
     <footer className="section-padding border-t border-white/10 pb-10 pt-12">
@@ -21,15 +37,14 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={s.label}
-                className="glass-card flex h-10 w-10 items-center justify-center rounded-full text-white/70 hover:text-[var(--accent)] focus-ring"
-              >
+                className="glass-card flex h-10 w-10 items-center justify-center rounded-full text-white/70 hover:text-[var(--accent)] focus-ring">
                 <Icon size={16} />
               </a>
             );
           })}
         </div>
         <p className="text-sm text-white/40">
-          © {new Date().getFullYear()} Your Name. {t('footer.rights')}
+          © {new Date().getFullYear()} {webConfig.title}. {t("footer.rights")}
         </p>
       </div>
     </footer>

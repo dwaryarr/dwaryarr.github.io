@@ -2,88 +2,78 @@ import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { Plus, Pencil, Trash2, Download, Upload, Github } from "lucide-react";
 import { commitCollectionToGithub, hasGithubConfig } from "../../lib/githubApi";
-import { syncCollectionToDataFolder } from "../../lib/fileStorage";
+import { saveDraft } from "../../lib/cloudflareApi";
 
-/**
- * Generic CRUD editor for a single data collection.
- *
- * Props:
- *  - name: collection key (e.g. "projects")
- *  - store: the store object from lib/stores.js (getAll/create/update/remove/exportJSON/replaceAll)
- *  - isSingleton: true for "profile" (single object, not an array)
- *  - titleField: which field to display as the row title (array mode)
- *
- * Editing uses a raw JSON textarea per item — this keeps the editor generic
- * across every collection's differing shape without needing 9 bespoke forms,
- * while still giving full create/read/update/delete capability.
- */
 export default function CollectionEditor({
   name,
-  store,
+  data,
+  onChange,
+  onCommit,
   isSingleton = false,
   titleField = "title",
-  reloadToken = 0,
 }) {
-  const [data, setData] = useState(() => store.getAll());
   const [editing, setEditing] = useState(null); // item being edited, or 'new', or null
   const [draft, setDraft] = useState("");
   const fileInputRef = useRef(null);
-
-  function refresh() {
-    setData(store.getAll());
-  }
-
-  useEffect(() => {
-    refresh();
-  }, [name, reloadToken]);
 
   function startEdit(item) {
     setEditing(item ? item.id || "singleton" : "new");
     setDraft(JSON.stringify(item || {}, null, 2));
   }
 
-  async function syncToDataFolder(nextData, successMessage) {
-    try {
-      const synced = await syncCollectionToDataFolder(name, nextData);
-      toast.success(synced ? successMessage : "Saved");
-    } catch (error) {
-      toast.error(
-        error.message || "Saved in browser, but failed to write the JSON file",
-      );
+  function buildNextData(parsed) {
+    if (isSingleton) {
+      return { ...data, ...parsed };
     }
+
+    if (editing === "new") {
+      const nextItem = { ...parsed, id: parsed.id || `${name}-${Date.now()}` };
+      return [...data, nextItem];
+    }
+
+    return data.map((item) =>
+      item.id === editing ? { ...item, ...parsed } : item,
+    );
   }
 
   async function save() {
+    let parsed;
+
     try {
-      const parsed = JSON.parse(draft);
-      if (isSingleton) {
-        store.update(parsed);
-      } else if (editing === "new") {
-        store.create(parsed);
-      } else {
-        store.update(editing, parsed);
-      }
-      const nextData = store.getAll();
-      refresh();
-      setEditing(null);
-      await syncToDataFolder(
-        nextData,
-        `Saved and wrote ${name}.json to the connected data folder`,
-      );
+      parsed = JSON.parse(draft);
     } catch {
-      toast.error("Invalid JSON — please fix and try again");
+      toast.error("Invalid JSON");
+      return;
     }
+
+    const nextData = buildNextData(parsed);
+
+    onChange(nextData);
+
+    try {
+      await saveDraft(name, nextData);
+
+      toast.success("Draft berhasil disimpan");
+    } catch (err) {
+      toast.error(err.message);
+    }
+
+    setEditing(null);
   }
 
   async function remove(id) {
     if (!confirm("Delete this item?")) return;
-    store.remove(id);
-    const nextData = store.getAll();
-    refresh();
-    await syncToDataFolder(
-      nextData,
-      `Deleted and wrote ${name}.json to the connected data folder`,
-    );
+
+    const nextData = data.filter((item) => item.id !== id);
+
+    onChange(nextData);
+
+    try {
+      await commitCollectionToGithub(name, nextData);
+      toast.success("Deleted");
+    } catch (err) {
+      toast.error(err.message);
+    }
   }
 
   function importJSON(e) {
@@ -92,31 +82,49 @@ export default function CollectionEditor({
     if (!file) return;
     const reader = new FileReader();
     reader.onload = async () => {
+      let parsed;
+
       try {
-        const parsed = JSON.parse(reader.result);
-        store.replaceAll(parsed);
-        const nextData = store.getAll();
-        refresh();
-        await syncToDataFolder(
-          nextData,
-          `${name}.json imported and synced to the connected data folder`,
-        );
+        parsed = JSON.parse(reader.result);
       } catch {
         toast.error("Invalid JSON file");
+        return;
+      }
+
+      try {
+        onChange(parsed);
+        toast.success(
+          `${name}.json imported and synced to the connected data folder`,
+        );
+      } catch (error) {
+        toast.error(error.message || "Failed to write the JSON file");
       }
     };
     reader.readAsText(file);
     input.value = "";
   }
 
-  async function pushToGithub() {
-    try {
-      await commitCollectionToGithub(name, data);
-      toast.success(`Committed ${name}.json to GitHub`);
-    } catch (err) {
-      toast.error(err.message);
-    }
+  function exportJSON() {
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json",
+    });
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${name}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
   }
+
+  // async function pushToGithub() {
+  //   try {
+  //     await commitCollectionToGithub(name, data);
+  //     toast.success(`Committed ${name}.json to GitHub`);
+  //   } catch (err) {
+  //     toast.error(err.message);
+  //   }
+  // }
 
   const items = isSingleton ? [data] : data;
 
@@ -135,7 +143,7 @@ export default function CollectionEditor({
             </button>
           )}
           <button
-            onClick={() => store.exportJSON()}
+            onClick={() => exportJSON()}
             className="btn-secondary !px-3 !py-1.5 text-xs">
             <Download size={14} /> Export
           </button>
@@ -151,13 +159,20 @@ export default function CollectionEditor({
             className="hidden"
             onChange={importJSON}
           />
-          {hasGithubConfig() && (
-            <button
-              onClick={pushToGithub}
-              className="btn-secondary !px-3 !py-1.5 text-xs">
-              <Github size={14} /> Push
-            </button>
-          )}
+          <button
+            onClick={async () => {
+              const res = await onCommit();
+
+              if (res.success) {
+                toast.success("Committed to GitHub");
+              } else {
+                toast.error("Commit gagal");
+              }
+            }}
+            className="btn-secondary !px-3 !py-1.5 text-xs">
+            <Github size={14} />
+            Commit
+          </button>
         </div>
       </div>
 

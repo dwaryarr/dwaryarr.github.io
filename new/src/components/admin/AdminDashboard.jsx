@@ -1,19 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { LogOut, Settings } from "lucide-react";
 import toast from "react-hot-toast";
 import { useAdminAuth } from "../../hooks/useAdminAuth";
-import { allStores } from "../../lib/stores";
+import defaultData from "../../data";
+import useCollection from "../../hooks/useCollection";
+
 import {
   saveGithubConfig,
   clearGithubConfig,
   hasGithubConfig,
 } from "../../lib/githubApi";
-import {
-  connectDataFolder,
-  disconnectDataFolder,
-  getDataFolderStatus,
-  loadCollectionsFromDataFolder,
-} from "../../lib/fileStorage";
+
 import CollectionEditor from "./CollectionEditor";
 
 const TABS = [
@@ -32,59 +29,31 @@ export default function AdminDashboard() {
   const { logout } = useAdminAuth();
   const [tab, setTab] = useState("profile");
   const [showSettings, setShowSettings] = useState(false);
-  const [reloadToken, setReloadToken] = useState(0);
-  const [dataFolderStatus, setDataFolderStatus] = useState({
-    supported: true,
-    connected: false,
-    name: null,
-  });
+  const profile = useCollection("profile", defaultData.profile);
+  const projects = useCollection("projects", defaultData.projects);
+  const skills = useCollection("skills", defaultData.skills);
+  const experience = useCollection("experience", defaultData.experience);
+  const education = useCollection("education", defaultData.education);
+  const certificates = useCollection("certificates", defaultData.certificates);
+  const socials = useCollection("socials", defaultData.socials);
+  const timeline = useCollection("timeline", defaultData.timeline);
+  const blogs = useCollection("blogs", defaultData.blogs);
+  const webConfig = useCollection("webConfig", defaultData.webConfig);
+
+  const collections = {
+    profile,
+    projects,
+    skills,
+    experience,
+    education,
+    certificates,
+    socials,
+    timeline,
+    blogs,
+    webConfig,
+  };
 
   const active = TABS.find((t) => t.key === tab);
-
-  useEffect(() => {
-    if (!showSettings) return;
-
-    void refreshDataFolderStatus();
-  }, [showSettings]);
-
-  async function refreshDataFolderStatus() {
-    const status = await getDataFolderStatus();
-    setDataFolderStatus(status);
-  }
-
-  async function handleConnectDataFolder() {
-    try {
-      const handle = await connectDataFolder();
-      const loadedCollections = await loadCollectionsFromDataFolder(
-        Object.keys(allStores),
-      );
-
-      Object.entries(loadedCollections).forEach(([collection, value]) => {
-        allStores[collection].replaceAll(value);
-      });
-
-      setReloadToken((value) => value + 1);
-      setDataFolderStatus({
-        supported: true,
-        connected: true,
-        name: handle.name,
-      });
-      toast.success(`Connected data folder: ${handle.name}`);
-    } catch (error) {
-      toast.error(error.message);
-    }
-  }
-
-  async function handleDisconnectDataFolder() {
-    try {
-      await disconnectDataFolder();
-      setReloadToken((value) => value + 1);
-      setDataFolderStatus({ supported: true, connected: false, name: null });
-      toast.success("Disconnected data folder");
-    } catch (error) {
-      toast.error(error.message);
-    }
-  }
 
   return (
     <div className="min-h-screen bg-ink-950">
@@ -123,35 +92,23 @@ export default function AdminDashboard() {
         </div>
 
         <CollectionEditor
-          key={active.key}
           name={active.key}
-          store={allStores[active.key]}
+          data={collections[active.key].data}
+          onChange={collections[active.key].save}
+          onCommit={collections[active.key].commit}
           isSingleton={!!active.singleton}
           titleField={active.titleField}
-          reloadToken={reloadToken}
         />
       </div>
 
       {showSettings && (
-        <GithubSettingsModal
-          dataFolderStatus={dataFolderStatus}
-          onConnectDataFolder={handleConnectDataFolder}
-          onDisconnectDataFolder={handleDisconnectDataFolder}
-          onRefreshDataFolderStatus={refreshDataFolderStatus}
-          onClose={() => setShowSettings(false)}
-        />
+        <GithubSettingsModal onClose={() => setShowSettings(false)} />
       )}
     </div>
   );
 }
 
-function GithubSettingsModal({
-  dataFolderStatus,
-  onConnectDataFolder,
-  onDisconnectDataFolder,
-  onRefreshDataFolderStatus,
-  onClose,
-}) {
+function GithubSettingsModal({ onClose }) {
   const [owner, setOwner] = useState("");
   const [repo, setRepo] = useState("");
   const [branch, setBranch] = useState("main");
@@ -177,42 +134,13 @@ function GithubSettingsModal({
         className="glass w-full max-w-md rounded-2xl p-6"
         onClick={(e) => e.stopPropagation()}>
         <h3 className="mb-1 font-display text-lg font-semibold text-white">
-          Storage Settings
+          GitHub Settings
         </h3>
         <p className="mb-5 text-xs text-white/40">
-          Connect a local data folder to write changes straight into the JSON
-          files under src/data. This works on Chromium-based browsers over
-          localhost or HTTPS.
+          Configure the GitHub repository used to publish your portfolio
+          updates. Every change made from the admin panel will be committed to
+          the repository and automatically deployed through GitHub Pages.
         </p>
-
-        <div className="mb-6 rounded-xl border border-white/10 bg-white/[0.03] p-4">
-          <div className="mb-2 flex items-center justify-between gap-3">
-            <div>
-              <p className="text-sm font-medium text-white">Data folder</p>
-              <p className="text-xs text-white/40">
-                {dataFolderStatus.supported
-                  ? dataFolderStatus.connected
-                    ? `Connected: ${dataFolderStatus.name}`
-                    : "Not connected"
-                  : "File System Access API is not supported in this browser"}
-              </p>
-            </div>
-            <button
-              onClick={
-                dataFolderStatus.connected
-                  ? onDisconnectDataFolder
-                  : onConnectDataFolder
-              }
-              className="btn-secondary !px-4 !py-2 text-sm">
-              {dataFolderStatus.connected ? "Disconnect" : "Connect folder"}
-            </button>
-          </div>
-          <button
-            onClick={onRefreshDataFolderStatus}
-            className="mt-2 text-xs text-[var(--accent)] hover:underline">
-            Refresh status
-          </button>
-        </div>
 
         <h4 className="mb-2 text-sm font-medium text-white">
           GitHub Integration

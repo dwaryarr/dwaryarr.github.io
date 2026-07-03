@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { ArrowUp } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useTranslation } from '../../i18n/I18nProvider';
+import { useEffect, useState } from "react";
+import { ArrowUp } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "../../i18n/I18nProvider";
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
@@ -9,10 +9,12 @@ export default function BackToTop() {
 
   useEffect(() => {
     function onScroll() {
-      setVisible(window.scrollY > 500);
+      const current = window.scrollY > 500;
+
+      setVisible((prev) => (prev === current ? prev : current));
     }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -22,10 +24,9 @@ export default function BackToTop() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          aria-label={t('footer.backToTop')}
-          className="fixed bottom-6 right-6 z-50 glass-card flex h-11 w-11 items-center justify-center rounded-full text-white focus-ring"
-        >
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label={t("footer.backToTop")}
+          className="fixed bottom-6 right-6 z-50 glass-card flex h-11 w-11 items-center justify-center rounded-full text-white focus-ring">
           <ArrowUp size={18} />
         </motion.button>
       )}

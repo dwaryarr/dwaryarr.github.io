@@ -4,25 +4,25 @@
  * Optional integration that lets the Admin page commit updated JSON files
  * directly to your GitHub repository using a fine-grained Personal Access
  * Token (PAT) with "Contents: Read and write" permission, stored only in
- * the browser's localStorage (never sent anywhere except the GitHub API).
+ * memory for the current session (never sent anywhere except the GitHub API).
  *
  * This is entirely optional — without a token, use Export/Import JSON
  * buttons in the Admin page instead.
  */
 
-const GITHUB_API = 'https://api.github.com';
+const GITHUB_API = "https://api.github.com";
+let githubConfig = null;
 
 function getConfig() {
-  const raw = localStorage.getItem('portfolio:github-config');
-  return raw ? JSON.parse(raw) : null;
+  return githubConfig;
 }
 
-export function saveGithubConfig({ token, owner, repo, branch = 'main' }) {
-  localStorage.setItem('portfolio:github-config', JSON.stringify({ token, owner, repo, branch }));
+export function saveGithubConfig({ token, owner, repo, branch = "main" }) {
+  githubConfig = { token, owner, repo, branch };
 }
 
 export function clearGithubConfig() {
-  localStorage.removeItem('portfolio:github-config');
+  githubConfig = null;
 }
 
 export function hasGithubConfig() {
@@ -36,14 +36,17 @@ export function hasGithubConfig() {
  */
 export async function commitCollectionToGithub(collection, data) {
   const config = getConfig();
-  if (!config) throw new Error('GitHub not configured. Add a token in Admin Settings first.');
+  if (!config)
+    throw new Error(
+      "GitHub not configured. Add a token in Admin Settings first.",
+    );
   const { token, owner, repo, branch } = config;
   const path = `src/data/${collection}.json`;
   const apiUrl = `${GITHUB_API}/repos/${owner}/${repo}/contents/${path}`;
 
   const headers = {
     Authorization: `Bearer ${token}`,
-    Accept: 'application/vnd.github+json',
+    Accept: "application/vnd.github+json",
   };
 
   // 1. Get current file SHA (required for updates)
@@ -58,11 +61,13 @@ export async function commitCollectionToGithub(collection, data) {
     // file may not exist yet; sha stays undefined for a create
   }
 
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+  const content = btoa(
+    unescape(encodeURIComponent(JSON.stringify(data, null, 2))),
+  );
 
   const res = await fetch(apiUrl, {
-    method: 'PUT',
-    headers: { ...headers, 'Content-Type': 'application/json' },
+    method: "PUT",
+    headers: { ...headers, "Content-Type": "application/json" },
     body: JSON.stringify({
       message: `chore(data): update ${collection}.json via Admin panel`,
       content,

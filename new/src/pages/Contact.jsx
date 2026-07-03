@@ -1,19 +1,18 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import toast from 'react-hot-toast';
-import { Send, Mail, MapPin, Phone } from 'lucide-react';
-import SEO from '../components/common/SEO';
-import SectionHeading from '../components/ui/SectionHeading';
-import ScrollReveal from '../components/ui/ScrollReveal';
-import { useTranslation } from '../i18n/I18nProvider';
-import { contactSchema } from '../lib/contactSchema';
-import { submitContactForm } from '../lib/googleAppsScript';
-import { profileStore } from '../lib/stores';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import toast from "react-hot-toast";
+import { Send, Mail, MapPin, Phone } from "lucide-react";
+import SEO from "../components/common/SEO";
+import SectionHeading from "../components/ui/SectionHeading";
+import ScrollReveal from "../components/ui/ScrollReveal";
+import { useTranslation } from "../i18n/I18nProvider";
+import { contactSchema } from "../lib/contactSchema";
+import { submitContactForm } from "../lib/googleAppsScript";
+import profile from "../data/profile.json";
 
 export default function Contact() {
   const { t } = useTranslation();
-  const profile = profileStore.getAll();
   const [submitting, setSubmitting] = useState(false);
 
   const {
@@ -27,10 +26,10 @@ export default function Contact() {
     setSubmitting(true);
     try {
       await submitContactForm(data);
-      toast.success(t('contact.success'));
+      toast.success(t("contact.success"));
       reset();
     } catch (err) {
-      toast.error(err.message || t('contact.error'));
+      toast.error(err.message || t("contact.error"));
     } finally {
       setSubmitting(false);
     }
@@ -38,37 +37,87 @@ export default function Contact() {
 
   return (
     <>
-      <SEO title="Contact" description="Get in touch for projects and collaborations." />
+      <SEO
+        title="Contact"
+        description="Get in touch for projects and collaborations."
+      />
       <section className="section-padding">
         <div className="mx-auto max-w-5xl">
-          <SectionHeading eyebrow="Say hello" title={t('contact.title')} subtitle={t('contact.subtitle')} />
+          <SectionHeading
+            eyebrow="Say hello"
+            title={t("contact.title")}
+            subtitle={t("contact.subtitle")}
+          />
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1.4fr]">
             <ScrollReveal className="space-y-4">
-              <InfoRow icon={Mail} label="Email" value={profile.email} href={`mailto:${profile.email}`} />
-              <InfoRow icon={Phone} label="Phone" value={profile.phone} href={`tel:${profile.phone}`} />
-              <InfoRow icon={MapPin} label="Location" value={profile.location} />
+              <InfoRow
+                icon={Mail}
+                label="Email"
+                value={profile.email}
+                href={`mailto:${profile.email}`}
+              />
+              <InfoRow
+                icon={Phone}
+                label="Phone"
+                value={profile.phone}
+                href={`tel:${profile.phone}`}
+              />
+              <InfoRow
+                icon={MapPin}
+                label="Location"
+                value={profile.location}
+              />
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <form onSubmit={handleSubmit(onSubmit)} className="glass-card space-y-5 rounded-2xl p-6">
-                <Field label={t('contact.name')} error={errors.name?.message}>
-                  <input {...register('name')} className="form-input" placeholder="John Doe" />
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="glass-card space-y-5 rounded-2xl p-6">
+                <Field label={t("contact.name")} error={errors.name?.message}>
+                  <input
+                    {...register("name")}
+                    className="form-input"
+                    placeholder="John Doe"
+                  />
                 </Field>
-                <Field label={t('contact.email')} error={errors.email?.message}>
-                  <input {...register('email')} type="email" className="form-input" placeholder="john@example.com" />
+                <Field label={t("contact.email")} error={errors.email?.message}>
+                  <input
+                    {...register("email")}
+                    type="email"
+                    className="form-input"
+                    placeholder="john@example.com"
+                  />
                 </Field>
-                <Field label={t('contact.subject')} error={errors.subject?.message}>
-                  <input {...register('subject')} className="form-input" placeholder="Project inquiry" />
+                <Field
+                  label={t("contact.subject")}
+                  error={errors.subject?.message}>
+                  <input
+                    {...register("subject")}
+                    className="form-input"
+                    placeholder="Project inquiry"
+                  />
                 </Field>
-                <Field label={t('contact.message')} error={errors.message?.message}>
-                  <textarea {...register('message')} rows={5} className="form-input resize-none" placeholder="Tell me about your project…" />
+                <Field
+                  label={t("contact.message")}
+                  error={errors.message?.message}>
+                  <textarea
+                    {...register("message")}
+                    rows={5}
+                    className="form-input resize-none"
+                    placeholder="Tell me about your project…"
+                  />
                 </Field>
 
-                <button type="submit" disabled={submitting} className="btn-primary w-full disabled:opacity-50">
-                  {submitting ? t('contact.sending') : (
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="btn-primary w-full disabled:opacity-50">
+                  {submitting ? (
+                    t("contact.sending")
+                  ) : (
                     <>
-                      {t('contact.send')} <Send size={16} />
+                      {t("contact.send")} <Send size={16} />
                     </>
                   )}
                 </button>
@@ -99,9 +148,13 @@ function InfoRow({ icon: Icon, label, value, href }) {
 function Field({ label, error, children }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block text-sm font-medium text-white/70">{label}</span>
+      <span className="mb-1.5 block text-sm font-medium text-white/70">
+        {label}
+      </span>
       {children}
-      {error && <span className="mt-1 block text-xs text-red-400">{error}</span>}
+      {error && (
+        <span className="mt-1 block text-xs text-red-400">{error}</span>
+      )}
     </label>
   );
 }

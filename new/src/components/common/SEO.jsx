@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
+import webConfig from "../../data/webConfig.json";
 
 /**
  * Lightweight SEO helper that updates document title and meta tags on
@@ -6,23 +7,23 @@ import { useEffect } from 'react';
  */
 export default function SEO({ title, description, image }) {
   useEffect(() => {
-    if (title) document.title = `${title} — Your Name`;
-    if (description) setMeta('description', description);
-    if (title) setMeta('og:title', title, true);
-    if (description) setMeta('og:description', description, true);
-    if (image) setMeta('og:image', image, true);
+    if (title) document.title = `${title} — ${webConfig.title}`;
+    if (description) setMeta("description", description);
+    if (title) setMeta("og:title", title, true);
+    if (description) setMeta("og:description", description, true);
+    if (image) setMeta("og:image", image, true);
   }, [title, description, image]);
 
   return null;
 }
 
 function setMeta(name, content, isProperty = false) {
-  const attr = isProperty ? 'property' : 'name';
+  const attr = isProperty ? "property" : "name";
   let el = document.querySelector(`meta[${attr}="${name}"]`);
   if (!el) {
-    el = document.createElement('meta');
+    el = document.createElement("meta");
     el.setAttribute(attr, name);
     document.head.appendChild(el);
   }
-  el.setAttribute('content', content);
+  el.setAttribute("content", content);
 }

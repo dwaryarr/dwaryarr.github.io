@@ -26,6 +26,27 @@ html {
   scroll-behavior: smooth;
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis {
+  scroll-behavior: auto !important;
+}
+
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background-color: #05060a;
@@ -55,7 +76,7 @@ body {
 
 @layer components {
   .glass {
-    @apply bg-white/[0.04] backdrop-blur-xl border border-white/10;
+    @apply bg-white/[0.05] backdrop-blur-sm border border-white/10;
   }
 
   .glass-card {

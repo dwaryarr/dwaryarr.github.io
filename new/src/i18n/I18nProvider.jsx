@@ -1,20 +1,30 @@
-import { createContext, useContext, useState, useMemo, useCallback } from 'react';
-import en from './en';
-import id from './id';
+import {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useCallback,
+} from "react";
+import en from "./en";
+import id from "./id";
 
 const dictionaries = { en, id };
 const I18nContext = createContext(null);
 
 function getNested(obj, path) {
-  return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : null), obj);
+  return path
+    .split(".")
+    .reduce(
+      (acc, key) => (acc && acc[key] !== undefined ? acc[key] : null),
+      obj,
+    );
 }
 
 export function I18nProvider({ children }) {
-  const [lang, setLang] = useState(() => localStorage.getItem('portfolio:lang') || 'en');
+  const [lang, setLang] = useState("en");
 
   const changeLang = useCallback((next) => {
     setLang(next);
-    localStorage.setItem('portfolio:lang', next);
   }, []);
 
   const t = useCallback(
@@ -22,16 +32,19 @@ export function I18nProvider({ children }) {
       const dict = dictionaries[lang] || dictionaries.en;
       return getNested(dict, key) ?? getNested(dictionaries.en, key) ?? key;
     },
-    [lang]
+    [lang],
   );
 
-  const value = useMemo(() => ({ lang, setLang: changeLang, t }), [lang, changeLang, t]);
+  const value = useMemo(
+    () => ({ lang, setLang: changeLang, t }),
+    [lang, changeLang, t],
+  );
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
 
 export function useTranslation() {
   const ctx = useContext(I18nContext);
-  if (!ctx) throw new Error('useTranslation must be used within I18nProvider');
+  if (!ctx) throw new Error("useTranslation must be used within I18nProvider");
   return ctx;
 }

@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+
+  "name": "portfolio",
+
+  "main": "worker.js",
+
+  "compatibility_date": "2026-07-03",
+
+  "compatibility_flags": ["nodejs_compat"],
+
+  "observability": {
+    "enabled": true,
+  },
+
+  "assets": {
+    "directory": "./dist",
+  },
+  "kv_namespaces": [
+    {
+      "binding": "PORTFOLIO_DATA",
+      "id": "d90b407e2a2b40f4b54674df4fe5cdd2",
+    },
+  ],
+}

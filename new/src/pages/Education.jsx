@@ -1,21 +1,21 @@
-import { GraduationCap } from 'lucide-react';
-import SEO from '../components/common/SEO';
-import SectionHeading from '../components/ui/SectionHeading';
-import ScrollReveal from '../components/ui/ScrollReveal';
-import { useTranslation } from '../i18n/I18nProvider';
-import { educationStore } from '../lib/stores';
-import { formatDate } from '../lib/utils';
+import { GraduationCap } from "lucide-react";
+import SEO from "../components/common/SEO";
+import SectionHeading from "../components/ui/SectionHeading";
+import ScrollReveal from "../components/ui/ScrollReveal";
+import { useTranslation } from "../i18n/I18nProvider";
+import education from "../data/education.json";
+import { formatDate } from "../lib/utils";
 
 export default function Education() {
   const { t } = useTranslation();
-  const education = educationStore.getAll();
+  const education = education;
 
   return (
     <>
       <SEO title="Education" description="My academic background." />
       <section className="section-padding">
         <div className="mx-auto max-w-4xl">
-          <SectionHeading eyebrow="Academics" title={t('education.title')} />
+          <SectionHeading eyebrow="Academics" title={t("education.title")} />
           <div className="mt-10 space-y-6">
             {education.map((edu, i) => (
               <ScrollReveal key={edu.id} delay={i * 0.08}>
@@ -24,12 +24,17 @@ export default function Education() {
                     <GraduationCap size={18} />
                   </div>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-white">{edu.degree}</h3>
+                    <h3 className="font-display text-lg font-semibold text-white">
+                      {edu.degree}
+                    </h3>
                     <p className="text-sm text-white/50">{edu.institution}</p>
                     <p className="mt-1 text-xs text-white/40">
-                      {formatDate(edu.startDate)} — {formatDate(edu.endDate)} {edu.gpa && `· GPA ${edu.gpa}`}
+                      {formatDate(edu.startDate)} — {formatDate(edu.endDate)}{" "}
+                      {edu.gpa && `· GPA ${edu.gpa}`}
                     </p>
-                    <p className="mt-3 text-sm text-white/60">{edu.description}</p>
+                    <p className="mt-3 text-sm text-white/60">
+                      {edu.description}
+                    </p>
                   </div>
                 </div>
               </ScrollReveal>

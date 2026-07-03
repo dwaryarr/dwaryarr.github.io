@@ -34,8 +34,8 @@ src/
     common/       SEO, AuroraBackground, BackToTop, ScrollProgressBar
   pages/          one component per route
   layouts/        MainLayout wraps all public pages
-  hooks/          useTheme, useAdminAuth, useScrollProgress, ...
-  lib/            localStore (CRUD), githubApi, contactSchema, utils
+  hooks/          useTheme, useAdminAuth, useLenis ...
+  lib/            githubApi, contactSchema, utils
   data/           *.json — single source of truth for all content
   i18n/           English + Indonesian translations
   styles/         global Tailwind CSS
