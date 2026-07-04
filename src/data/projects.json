@@ -1,9 +1,59 @@
 [
   {
-    "title": "Cloudflare KV Test2"
+    "id": "proj-1",
+    "title": "Nova Analytics",
+    "slug": "nova-analytics",
+    "summary": "A real-time analytics dashboard with custom data pipelines and visualizations.",
+    "description": "Nova Analytics is a SaaS dashboard that ingests millions of events per day and renders real-time charts. Built with a focus on performance and a Stripe-inspired UI.",
+    "category": "Web App",
+    "status": "Completed",
+    "featured": true,
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "TailwindCSS"
+    ],
+    "gallery": [
+      "/assets/projects/nova-1.png",
+      "/assets/projects/nova-2.png"
+    ],
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/yourusername/nova-analytics",
+    "caseStudy": {
+      "challenges": "Handling high-throughput event ingestion while keeping the dashboard responsive in real time.",
+      "solutions": "Implemented a Redis-backed queue with batched writes and websocket-driven incremental UI updates.",
+      "results": "Reduced dashboard load time by 60% and supports 5x more concurrent users."
+    },
+    "date": "2025-03-01"
   },
   {
-    "title": "Cloudflare KV Test3",
-    "id": "projects-1783186197272"
+    "id": "proj-2",
+    "title": "Aurora UI Kit",
+    "slug": "aurora-ui-kit",
+    "summary": "An open-source component library with glassmorphism and neon aesthetics.",
+    "description": "A React + Tailwind component library inspired by Linear and Vercel, focused on accessibility and motion design.",
+    "category": "Library",
+    "status": "In Progress",
+    "featured": true,
+    "techStack": [
+      "React",
+      "TailwindCSS",
+      "Framer Motion",
+      "Storybook"
+    ],
+    "gallery": [
+      "/assets/projects/aurora-1.png"
+    ],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/yourusername/aurora-ui",
+    "caseStudy": {
+      "challenges": "Designing flexible, themeable components without sacrificing visual identity.",
+      "solutions": "Used CSS variables for theming tokens and composable primitives with Radix-style patterns.",
+      "results": "Adopted in 3 internal products, cutting UI dev time by 40%."
+    },
+    "date": "2026-01-15"
   }
 ]
