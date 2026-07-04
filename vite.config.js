@@ -6,8 +6,6 @@ import react from "@vitejs/plugin-react";
 // If deploying to a custom domain or username.github.io root repo, use base: '/'
 export default defineConfig({
   plugins: [react()],
-  // base: '/dwaryarr.github.io/',
-  // local
   base: "/",
   build: {
     outDir: "dist",
@@ -24,6 +22,14 @@ export default defineConfig({
             "react-syntax-highlighter",
           ],
         },
+      },
+    },
+  },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://127.0.0.1:8787",
+        changeOrigin: true,
       },
     },
   },

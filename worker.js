@@ -1,5 +1,17 @@
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
 export default {
   async fetch(request, env) {
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        headers: corsHeaders,
+      });
+    }
+
     const url = new URL(request.url);
 
     switch (url.pathname) {
@@ -13,9 +25,7 @@ export default {
         return handleCommit(request, env);
 
       default:
-        return new Response("Not Found", {
-          status: 404,
-        });
+        return env.ASSETS.fetch(request);
     }
   },
 };
@@ -35,17 +45,63 @@ async function handleLoad(request, env) {
         message: "Collection is required",
       },
       {
-        status: 400,
+        headers: corsHeaders,
+      },
+      { status: 400 },
+    );
+  }
+
+  // ==========================
+  // 1. cek draft di KV
+  // ==========================
+
+  const draft = await env.PORTFOLIO_DATA.get(collection);
+
+  if (draft) {
+    return Response.json(
+      {
+        success: true,
+        source: "kv",
+        data: JSON.parse(draft),
+      },
+      {
+        headers: corsHeaders,
       },
     );
   }
 
-  const data = await env.PORTFOLIO_DATA.get(collection);
+  // ==========================
+  // 2. kalau belum ada draft,
+  // baca file bawaan
+  // ==========================
 
-  return Response.json({
-    success: true,
-    data: data ? JSON.parse(data) : null,
-  });
+  const asset = await fetch(
+    `https://raw.githubusercontent.com/dwaryarr/dwaryarr.github.io/main/src/data/${collection}.json`,
+  );
+
+  if (!asset.ok) {
+    return Response.json(
+      {
+        success: false,
+        message: "Collection not found",
+      },
+      {
+        status: 404,
+        headers: corsHeaders,
+      },
+    );
+  }
+
+  return Response.json(
+    {
+      success: true,
+      source: "github",
+      data: await asset.json(),
+    },
+    {
+      headers: corsHeaders,
+    },
+  );
 }
 
 // =========================
@@ -67,6 +123,9 @@ async function handleSave(request, env) {
         message: "Collection is required",
       },
       {
+        headers: corsHeaders,
+      },
+      {
         status: 400,
       },
     );
@@ -74,16 +133,22 @@ async function handleSave(request, env) {
 
   await env.PORTFOLIO_DATA.put(collection, JSON.stringify(content, null, 2));
 
-  return Response.json({
-    success: true,
-    message: `${collection} saved to Cloudflare KV`,
-  });
+  return Response.json(
+    {
+      success: true,
+      message: `${collection} saved to Cloudflare KV`,
+    },
+    {
+      headers: corsHeaders,
+    },
+  );
 }
 
 // =========================
 // COMMIT TO GITHUB
 // =========================
 async function handleCommit(request, env) {
+  console.log("TOKEN =", env.GITHUB_TOKEN);
   if (request.method !== "POST") {
     return new Response("Method Not Allowed", { status: 405 });
   }
@@ -95,6 +160,9 @@ async function handleCommit(request, env) {
       {
         success: false,
         message: "Collection is required",
+      },
+      {
+        headers: corsHeaders,
       },
       { status: 400 },
     );
@@ -108,13 +176,16 @@ async function handleCommit(request, env) {
         success: false,
         message: "Draft not found",
       },
+      {
+        headers: corsHeaders,
+      },
       { status: 404 },
     );
   }
 
-  const owner = "dwaryarr";
-  const repo = "dwaryarr.github.io";
-  const branch = "main";
+  const owner = env.GITHUB_OWNER;
+  const repo = env.GITHUB_REPO;
+  const branch = env.GITHUB_BRANCH;
   const path = `src/data/${collection}.json`;
 
   const headers = {
@@ -143,6 +214,9 @@ async function handleCommit(request, env) {
         error: "GitHub Token Invalid",
         github: userText,
       },
+      {
+        headers: corsHeaders,
+      },
       { status: 401 },
     );
   }
@@ -168,6 +242,9 @@ async function handleCommit(request, env) {
         success: false,
         error: "Cannot get file",
         github: fileText,
+      },
+      {
+        headers: corsHeaders,
       },
       { status: 500 },
     );
@@ -217,8 +294,13 @@ async function handleCommit(request, env) {
     );
   }
 
-  return Response.json({
-    success: true,
-    github: JSON.parse(commitText),
-  });
+  return Response.json(
+    {
+      success: true,
+      github: JSON.parse(commitText),
+    },
+    {
+      headers: corsHeaders,
+    },
+  );
 }

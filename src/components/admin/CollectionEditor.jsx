@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { Plus, Pencil, Trash2, Download, Upload, Github } from "lucide-react";
-import { commitCollectionToGithub, hasGithubConfig } from "../../lib/githubApi";
-import { saveDraft } from "../../lib/cloudflareApi";
+import FormEditor from "../form/FormEditor";
+import { schemas } from "../../data/schema";
+import { defaults } from "../../data/defaults";
 
 export default function CollectionEditor({
   name,
@@ -13,12 +14,18 @@ export default function CollectionEditor({
   titleField = "title",
 }) {
   const [editing, setEditing] = useState(null); // item being edited, or 'new', or null
-  const [draft, setDraft] = useState("");
+  const [currentData, setCurrentData] = useState({});
   const fileInputRef = useRef(null);
+  const schema = schemas[name] ?? [];
 
   function startEdit(item) {
     setEditing(item ? item.id || "singleton" : "new");
-    setDraft(JSON.stringify(item || {}, null, 2));
+
+    if (item) {
+      setCurrentData(structuredClone(item));
+    } else {
+      setCurrentData({});
+    }
   }
 
   function buildNextData(parsed) {
@@ -37,28 +44,31 @@ export default function CollectionEditor({
   }
 
   async function save() {
-    let parsed;
+    let nextData;
 
-    try {
-      parsed = JSON.parse(draft);
-    } catch {
-      toast.error("Invalid JSON");
-      return;
+    if (isSingleton) {
+      nextData = currentData;
+    } else if (editing === "new") {
+      nextData = [
+        ...data,
+        {
+          id: crypto.randomUUID(),
+          ...currentData,
+        },
+      ];
+    } else {
+      nextData = data.map((item) => (item.id === editing ? currentData : item));
     }
 
-    const nextData = buildNextData(parsed);
-
-    onChange(nextData);
-
     try {
-      await saveDraft(name, nextData);
+      await onChange(nextData);
 
       toast.success("Draft berhasil disimpan");
-    } catch (err) {
-      toast.error(err.message);
-    }
 
-    setEditing(null);
+      setEditing(null);
+    } catch (e) {
+      toast.error(e.message);
+    }
   }
 
   async function remove(id) {
@@ -66,11 +76,10 @@ export default function CollectionEditor({
 
     const nextData = data.filter((item) => item.id !== id);
 
-    onChange(nextData);
-
     try {
-      await commitCollectionToGithub(name, nextData);
-      toast.success("Deleted");
+      await onChange(nextData);
+
+      toast.success("Draft berhasil dihapus");
     } catch (err) {
       toast.error(err.message);
     }
@@ -92,10 +101,8 @@ export default function CollectionEditor({
       }
 
       try {
-        onChange(parsed);
-        toast.success(
-          `${name}.json imported and synced to the connected data folder`,
-        );
+        await onChange(parsed);
+        toast.success("Draft berhasil diimport");
       } catch (error) {
         toast.error(error.message || "Failed to write the JSON file");
       }
@@ -117,14 +124,29 @@ export default function CollectionEditor({
     URL.revokeObjectURL(url);
   }
 
-  // async function pushToGithub() {
-  //   try {
-  //     await commitCollectionToGithub(name, data);
-  //     toast.success(`Committed ${name}.json to GitHub`);
-  //   } catch (err) {
-  //     toast.error(err.message);
-  //   }
-  // }
+  async function commit() {
+    try {
+      const res = await fetch("/api/commit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          collection: name,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (!result.success) {
+        throw new Error(result.error || "Commit gagal");
+      }
+
+      toast.success("Commit ke GitHub berhasil");
+    } catch (err) {
+      toast.error(err.message);
+    }
+  }
 
   const items = isSingleton ? [data] : data;
 
@@ -137,7 +159,7 @@ export default function CollectionEditor({
         <div className="flex flex-wrap items-center gap-2">
           {!isSingleton && (
             <button
-              onClick={() => startEdit(null)}
+              onClick={() => startEdit(structuredClone(schemas[name]))}
               className="btn-secondary !px-3 !py-1.5 text-xs">
               <Plus size={14} /> Add
             </button>
@@ -160,16 +182,8 @@ export default function CollectionEditor({
             onChange={importJSON}
           />
           <button
-            onClick={async () => {
-              const res = await onCommit();
-
-              if (res.success) {
-                toast.success("Committed to GitHub");
-              } else {
-                toast.error("Commit gagal");
-              }
-            }}
-            className="btn-secondary !px-3 !py-1.5 text-xs">
+            onClick={commit}
+            className="btn-primary !px-3 !py-1.5 text-xs">
             <Github size={14} />
             Commit
           </button>
@@ -214,26 +228,39 @@ export default function CollectionEditor({
           className="fixed inset-0 z-[200] grid place-items-center bg-black/60 backdrop-blur-sm p-4"
           onClick={() => setEditing(null)}>
           <div
-            className="glass w-full max-w-lg rounded-2xl p-5"
+            className="glass w-full max-w-3xl rounded-2xl p-6"
             onClick={(e) => e.stopPropagation()}>
-            <h3 className="mb-3 font-display text-sm font-semibold text-white">
-              {editing === "new" ? "New item" : "Edit item"} — raw JSON
+            <h3 className="mb-5 text-xl font-bold">
+              {editing === "new" ? "Tambah Data" : "Edit Data"}
             </h3>
-            <textarea
-              value={draft}
-              onChange={(e) => setDraft(e.target.value)}
-              rows={14}
-              className="form-input font-mono text-xs"
-            />
-            <div className="mt-4 flex justify-end gap-2">
+
+            {schema.length > 0 ? (
+              <FormEditor
+                schema={schema}
+                value={currentData}
+                onChange={setCurrentData}
+              />
+            ) : (
+              <textarea
+                rows={18}
+                value={JSON.stringify(currentData, null, 2)}
+                onChange={(e) => {
+                  try {
+                    setCurrentData(JSON.parse(e.target.value));
+                  } catch {}
+                }}
+                className="form-input font-mono"
+              />
+            )}
+
+            <div className="mt-6 flex justify-end gap-3">
               <button
-                onClick={() => setEditing(null)}
-                className="btn-secondary !px-4 !py-2 text-sm">
+                className="btn-secondary"
+                onClick={() => setEditing(null)}>
                 Cancel
               </button>
-              <button
-                onClick={save}
-                className="btn-primary !px-4 !py-2 text-sm">
+
+              <button className="btn-primary" onClick={save}>
                 Save
               </button>
             </div>
