@@ -1,5 +1,5 @@
 {
-  "name": "Dwi Arya Ramadhani",
+  "name": "Dwi Arya RamadhaniRR",
   "title": "Presales Engineer & Full-Stack Developer",
   "tagline": "I build fast, elegant, and accessible digital experiences.",
   "bio": "I'm a full-stack developer specializing in modern web applications. I love crafting clean interfaces, robust systems, and delightful user experiences using React, Node.js, and cloud platforms.",
@@ -10,5 +10,8 @@
   "resumeUrl": "/assets/resume.pdf",
   "available": true,
   "yearsOfExperience": 5,
-  "languages": ["English", "Indonesian"]
+  "languages": [
+    "English",
+    "Indonesian"
+  ]
 }
