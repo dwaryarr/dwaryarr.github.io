@@ -1,0 +1,1 @@
+import{j as a,m as n}from"./motion-BmGatUQo.js";function s({children:i,delay:t=0,y:e=24,className:o=""}){return a.jsx(n.div,{initial:{opacity:0,y:e},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-60px"},transition:{duration:.5,delay:t,ease:"easeOut"},className:o,children:i})}export{s as S};

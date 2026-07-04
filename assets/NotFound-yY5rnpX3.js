@@ -1,0 +1,6 @@
+import{j as e}from"./motion-BmGatUQo.js";import{S as t}from"./SEO-CDsmT92k.js";import{L as o}from"./vendor-CBR-hZs0.js";import{c as s}from"./index-CP5dMBbo.js";import"./markdown-C2rnwa-5.js";/**
+ * @license lucide-react v0.469.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const a=s("House",[["path",{d:"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8",key:"5wwlr5"}],["path",{d:"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",key:"1d0kgt"}]]);function c(){return e.jsxs(e.Fragment,{children:[e.jsx(t,{title:"404 Not Found",description:"The page you're looking for doesn't exist."}),e.jsxs("section",{className:"flex min-h-[70vh] flex-col items-center justify-center px-6 text-center",children:[e.jsx("p",{className:"font-display text-7xl font-bold text-gradient",children:"404"}),e.jsx("h1",{className:"mt-4 text-xl font-semibold text-white",children:"Page not found"}),e.jsx("p",{className:"mt-2 text-white/50",children:"The page you're looking for doesn't exist or has moved."}),e.jsxs(o,{to:"/",className:"btn-primary mt-8",children:[e.jsx(a,{size:16})," Back home"]})]})]})}export{c as default};
