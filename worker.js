@@ -85,9 +85,7 @@ async function handleSave(request, env) {
 // =========================
 async function handleCommit(request, env) {
   if (request.method !== "POST") {
-    return new Response("Method Not Allowed", {
-      status: 405,
-    });
+    return new Response("Method Not Allowed", { status: 405 });
   }
 
   const { collection } = await request.json();
@@ -98,9 +96,7 @@ async function handleCommit(request, env) {
         success: false,
         message: "Collection is required",
       },
-      {
-        status: 400,
-      },
+      { status: 400 },
     );
   }
 
@@ -112,16 +108,13 @@ async function handleCommit(request, env) {
         success: false,
         message: "Draft not found",
       },
-      {
-        status: 404,
-      },
+      { status: 404 },
     );
   }
 
   const owner = "dwaryarr";
   const repo = "dwaryarr.github.io";
   const branch = "main";
-
   const path = `src/data/${collection}.json`;
 
   const headers = {
@@ -131,7 +124,33 @@ async function handleCommit(request, env) {
     "X-GitHub-Api-Version": "2022-11-28",
   };
 
-  // Ambil SHA file lama
+  // ============================
+  // Test Token
+  // ============================
+
+  const userRes = await fetch("https://api.github.com/user", {
+    headers,
+  });
+
+  const userText = await userRes.text();
+
+  console.log("USER =", userText);
+
+  if (!userRes.ok) {
+    return Response.json(
+      {
+        success: false,
+        error: "GitHub Token Invalid",
+        github: userText,
+      },
+      { status: 401 },
+    );
+  }
+
+  // ============================
+  // Ambil SHA
+  // ============================
+
   const fileRes = await fetch(
     `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`,
     {
@@ -139,25 +158,34 @@ async function handleCommit(request, env) {
     },
   );
 
+  const fileText = await fileRes.text();
+
+  console.log("FILE =", fileText);
+
   if (!fileRes.ok) {
     return Response.json(
       {
         success: false,
-        error: await fileRes.text(),
+        error: "Cannot get file",
+        github: fileText,
       },
-      {
-        status: 500,
-      },
+      { status: 500 },
     );
   }
 
-  const file = await fileRes.json();
+  const file = JSON.parse(fileText);
 
-  // Encode Base64
-  const encoded = btoa(json);
+  // ============================
+  // Encode UTF-8 Base64
+  // ============================
 
+  const encoded = btoa(String.fromCharCode(...new TextEncoder().encode(json)));
+
+  // ============================
   // Commit
-  const update = await fetch(
+  // ============================
+
+  const commitRes = await fetch(
     `https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
     {
       method: "PUT",
@@ -174,10 +202,23 @@ async function handleCommit(request, env) {
     },
   );
 
-  const result = await update.json();
+  const commitText = await commitRes.text();
+
+  console.log("COMMIT =", commitText);
+
+  if (!commitRes.ok) {
+    return Response.json(
+      {
+        success: false,
+        error: "Commit failed",
+        github: commitText,
+      },
+      { status: 500 },
+    );
+  }
 
   return Response.json({
-    success: update.ok,
-    github: result,
+    success: true,
+    github: JSON.parse(commitText),
   });
 }
