@@ -1,7 +1,7 @@
 [
   {
     "id": "proj-1",
-    "title": "Nova Analytics",
+    "title": "Nova Analytics 2",
     "slug": "nova-analytics",
     "summary": "A real-time analytics dashboard with custom data pipelines and visualizations.",
     "description": "Nova Analytics is a SaaS dashboard that ingests millions of events per day and renders real-time charts. Built with a focus on performance and a Stripe-inspired UI.",
