@@ -1,8 +1,8 @@
 {
   "name": "Dwi Arya Ramadhani",
   "title": "Presales Engineer & Full-Stack Developer",
-  "tagline": "I build fast, elegant, and accessible digital experiences.",
-  "bio": "I'm a full-stack developer specializing in modern web applications. I love crafting clean interfaces, robust systems, and delightful user experiences using React, Node.js, and cloud platforms.",
+  "tagline": "Engineering secure enterprise solutions that bridge business and technology.",
+  "bio": "As a Presales Engineer and Full-Stack Developer, I combine solution consulting with hands-on engineering to deliver enterprise-grade applications and secure digital platforms. My experience includes web development, API integration, payment gateways, IoT systems, cloud deployment, and database security. I'm also experienced with the Thales CipherTrust Data Security Platform (CDSP), including CipherTrust Manager, CipherTrust Tokenization Server (CTS/CTVL), CipherTrust Transparent Encryption (CTE), and KMIP, helping organizations implement encryption, tokenization, key management, and data security best practices.",
   "location": "Jakarta, Indonesia",
   "email": "dwi.aryaramadhni@gmail.com",
   "phone": "+62 821-3815-2519",
@@ -10,8 +10,5 @@
   "resumeUrl": "/assets/resume.pdf",
   "available": true,
   "yearsOfExperience": 5,
-  "languages": [
-    "English",
-    "Indonesian"
-  ]
+  "languages": ["English", "Indonesian"]
 }

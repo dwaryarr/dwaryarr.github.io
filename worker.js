@@ -33,8 +33,15 @@ export default {
       case "/api/sync":
         return handleSync(request, env);
 
-      default:
-        return env.ASSETS.fetch(request);
+      default: {
+        try {
+          return await env.ASSETS.fetch(request);
+        } catch {
+          return env.ASSETS.fetch(
+            new Request(new URL("/index.html", request.url)),
+          );
+        }
+      }
     }
   },
 };

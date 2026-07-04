@@ -1,59 +1,300 @@
 [
   {
     "id": "proj-1",
-    "title": "Nova Analytics 2",
-    "slug": "nova-analytics",
-    "summary": "A real-time analytics dashboard with custom data pipelines and visualizations.",
-    "description": "Nova Analytics is a SaaS dashboard that ingests millions of events per day and renders real-time charts. Built with a focus on performance and a Stripe-inspired UI.",
-    "category": "Web App",
+    "title": "DartGameCorner",
+    "slug": "dartgamecorner",
+    "summary": "An e-commerce platform for digital gaming products and online game consignment services.",
+    "description": "DartGameCorner is an e-commerce platform focused on digital gaming products and game consignment services across the Asia-Pacific region. The platform provides a secure purchasing experience with multiple online payment methods powered by Midtrans Payment Gateway.",
+    "category": "E-Commerce",
     "status": "Completed",
     "featured": true,
-    "techStack": [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Redis",
-      "TailwindCSS"
-    ],
-    "gallery": [
-      "/assets/projects/nova-1.png",
-      "/assets/projects/nova-2.png"
-    ],
-    "liveUrl": "https://example.com",
-    "githubUrl": "https://github.com/yourusername/nova-analytics",
+    "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 4", "Midtrans API"],
+    "gallery": ["/assets/projects/webdartgamecorner.png"],
+    "liveUrl": "https://dartgamecorner.000webhostapp.com/",
+    "githubUrl": "",
     "caseStudy": {
-      "challenges": "Handling high-throughput event ingestion while keeping the dashboard responsive in real time.",
-      "solutions": "Implemented a Redis-backed queue with batched writes and websocket-driven incremental UI updates.",
-      "results": "Reduced dashboard load time by 60% and supports 5x more concurrent users."
+      "challenges": "Developing a secure digital marketplace with multiple payment options.",
+      "solutions": "Integrated Midtrans Payment Gateway and implemented a streamlined purchasing workflow using CodeIgniter.",
+      "results": "Delivered a functional digital marketplace with reliable online payment capabilities."
     },
-    "date": "2025-03-01"
+    "date": "2021-01-01"
   },
   {
     "id": "proj-2",
-    "title": "Aurora UI Kit",
-    "slug": "aurora-ui-kit",
-    "summary": "An open-source component library with glassmorphism and neon aesthetics.",
-    "description": "A React + Tailwind component library inspired by Linear and Vercel, focused on accessibility and motion design.",
-    "category": "Library",
-    "status": "In Progress",
+    "title": "PasarIwak E-Marketplace",
+    "slug": "pasariwak-e-marketplace",
+    "summary": "A marketplace connecting freshwater fish farmers, suppliers, and consumers.",
+    "description": "PasarIwak is a web-based marketplace developed to support freshwater aquaculture by connecting fish farmers, feed suppliers, hatcheries, and customers. The platform also provides recommendation features and an online discussion forum monitored by the local Fisheries Department.",
+    "category": "Marketplace",
+    "status": "Completed",
     "featured": true,
-    "techStack": [
-      "React",
-      "TailwindCSS",
-      "Framer Motion",
-      "Storybook"
-    ],
-    "gallery": [
-      "/assets/projects/aurora-1.png"
-    ],
-    "liveUrl": "",
-    "githubUrl": "https://github.com/yourusername/aurora-ui",
+    "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 4", "Midtrans API"],
+    "gallery": ["/assets/projects/webpasariwak.png"],
+    "liveUrl": "https://pasariwak.com/market",
+    "githubUrl": "",
     "caseStudy": {
-      "challenges": "Designing flexible, themeable components without sacrificing visual identity.",
-      "solutions": "Used CSS variables for theming tokens and composable primitives with Radix-style patterns.",
-      "results": "Adopted in 3 internal products, cutting UI dev time by 40%."
+      "challenges": "Building a digital ecosystem for multiple stakeholders in the fisheries industry.",
+      "solutions": "Implemented marketplace, recommendation engine, and community discussion features.",
+      "results": "Improved digital transactions and communication between farmers, suppliers, and government agencies."
     },
-    "date": "2026-01-15"
+    "date": "2022-01-01"
+  },
+  {
+    "id": "proj-3",
+    "title": "IoT PasarIwak Dashboard",
+    "slug": "iot-pasariwak-dashboard",
+    "summary": "A real-time dashboard for monitoring fish pond environments using IoT devices.",
+    "description": "A web dashboard that receives environmental sensor data from Arduino devices through APIs and visualizes water quality metrics in real time for freshwater fish farmers.",
+    "category": "IoT",
+    "status": "Completed",
+    "featured": true,
+    "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 4", "Arduino"],
+    "gallery": ["/assets/projects/webiotpasariwak.png"],
+    "liveUrl": "https://iot.pasariwak.com/",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Providing reliable real-time environmental monitoring.",
+      "solutions": "Integrated Arduino sensor data through REST APIs and displayed live monitoring dashboards.",
+      "results": "Enabled farmers to monitor pond conditions remotely and make faster operational decisions."
+    },
+    "date": "2022-06-01"
+  },
+  {
+    "id": "proj-4",
+    "title": "SITHOLE - Legal Consultation Platform",
+    "slug": "sithole-pn-semarang",
+    "summary": "A legal consultation platform developed for Semarang District Court.",
+    "description": "SITHOLE is a web application that provides online legal consultation services including video meetings, live chat, and offline consultation management for the Semarang District Court.",
+    "category": "Government",
+    "status": "Completed",
+    "featured": true,
+    "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 4", "Jitsi Meet API"],
+    "gallery": ["/assets/projects/websithole.png"],
+    "liveUrl": "https://pn-semarangkota.go.id/sithole/",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Providing accessible legal consultation services during digital transformation.",
+      "solutions": "Integrated Jitsi Meet for online consultations and implemented appointment management features.",
+      "results": "Enabled citizens to access legal consultation services remotely."
+    },
+    "date": "2022-10-01"
+  },
+  {
+    "id": "proj-5",
+    "title": "IoT PasarIwak Mobile",
+    "slug": "iot-pasariwak-mobile",
+    "summary": "Android application for monitoring fish pond conditions in real time.",
+    "description": "An Android application that allows fish farmers to monitor pH, water temperature, and light intensity collected from IoT sensors in real time.",
+    "category": "Mobile App",
+    "status": "Completed",
+    "featured": false,
+    "techStack": ["Java", "Arduino"],
+    "gallery": ["/assets/projects/iotpasariwakapp.png"],
+    "liveUrl": "",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Displaying real-time IoT sensor data on mobile devices.",
+      "solutions": "Developed a lightweight Android application connected to the IoT monitoring system.",
+      "results": "Provided farmers with convenient mobile access to pond monitoring data."
+    },
+    "date": "2022-07-01"
+  },
+  {
+    "id": "proj-6",
+    "title": "QRBarcode Scanner App",
+    "slug": "qrbarcode-scanner",
+    "summary": "An Android QR and barcode scanner with sharing and clipboard features.",
+    "description": "A mobile application capable of scanning QR codes and barcodes, displaying decoded information, opening URLs, copying results to the clipboard, saving scan history, and sharing scanned content.",
+    "category": "Mobile App",
+    "status": "Completed",
+    "featured": false,
+    "techStack": ["Java", "ZXing Library"],
+    "gallery": ["/assets/projects/qrbarcodescannerapp.png"],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/dwaryarr/QRBarcode-Scanner/releases/tag/v1.0/",
+    "caseStudy": {
+      "challenges": "Building a lightweight and fast barcode scanning application.",
+      "solutions": "Integrated ZXing Library and added productivity features such as clipboard, sharing, and browser integration.",
+      "results": "Created a practical utility application for everyday barcode and QR code scanning."
+    },
+    "date": "2021-06-01"
+  },
+  {
+    "id": "proj-7",
+    "title": "LSP UDINUS Certification System",
+    "slug": "lsp-udinus",
+    "summary": "A certification management platform for Universitas Dian Nuswantoro.",
+    "description": "A web-based certification management system that supports assessment registration, self-assessment, certification management, and certificate generation for the Professional Certification Institute of Universitas Dian Nuswantoro.",
+    "category": "Education",
+    "status": "Completed",
+    "featured": true,
+    "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 4"],
+    "gallery": ["/assets/projects/weblspudinus.png"],
+    "liveUrl": "https://lsp.dinus.id/",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Managing multiple certification workflows with different user roles.",
+      "solutions": "Implemented role-based access control and digital certification management modules.",
+      "results": "Streamlined certification processes for students and certification administrators."
+    },
+    "date": "2023-01-01"
+  },
+  {
+    "id": "proj-8",
+    "title": "Karya Indonesia",
+    "slug": "karya-indonesia",
+    "summary": "A digital marketplace for entertainment works and royalty management.",
+    "description": "A web platform designed to facilitate buying, selling, and managing entertainment products such as music and royalty-based digital assets.",
+    "category": "Entertainment",
+    "status": "Prototype",
+    "featured": false,
+    "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 5"],
+    "gallery": ["/assets/projects/webkaryaindonesia.jpg"],
+    "liveUrl": "https://prototype-karya-indonesia.000webhostapp.com/",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Designing a marketplace focused on digital creative assets.",
+      "solutions": "Built a prototype marketplace with content management and royalty-oriented workflows.",
+      "results": "Produced a functional proof-of-concept for future platform development."
+    },
+    "date": "2023-04-01"
+  },
+  {
+    "id": "proj-9",
+    "title": "Inkaedu Learning Management System",
+    "slug": "inkaedu-lms",
+    "summary": "A Learning Management System for online education and training.",
+    "description": "An LMS platform that enables online learning, digital examinations, and community discussions for educational institutions and training organizations.",
+    "category": "Education",
+    "status": "Completed",
+    "featured": true,
+    "techStack": ["CodeIgniter 3", "React", "MySQL", "Bootstrap 5"],
+    "gallery": ["/assets/projects/weblmsinkaedu.png"],
+    "liveUrl": "https://lpkamdal-inkalindo.id/",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Creating an engaging online learning experience with scalable educational features.",
+      "solutions": "Combined CodeIgniter backend with React frontend for interactive learning modules.",
+      "results": "Delivered a comprehensive LMS supporting learning, examinations, and discussion forums."
+    },
+    "date": "2024-02-01"
+  },
+  {
+    "id": "proj-10",
+    "title": "PT Mitra Inovasi Utama Company Profile",
+    "slug": "pt-mitra-inovasi-utama",
+    "summary": "A modern corporate profile website showcasing company services and information.",
+    "description": "A responsive company profile website designed to present PT Mitra Inovasi Utama's business information, services, and corporate identity in a professional and accessible manner.",
+    "category": "Corporate",
+    "status": "Completed",
+    "featured": false,
+    "techStack": ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
+    "gallery": ["/assets/projects/webptmiu.png"],
+    "liveUrl": "https://mitra-inovasiutama.com/",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Creating a responsive and professional corporate website with strong branding.",
+      "solutions": "Developed a modern responsive interface using Bootstrap and optimized content presentation.",
+      "results": "Delivered a polished company profile that strengthens the company's online presence."
+    },
+    "date": "2024-05-01"
+  },
+  {
+    "id": "proj-11",
+    "title": "Karind - Karya Indonesia",
+    "slug": "karind-karya-indonesia",
+    "summary": "A digital marketplace for entertainment works and royalty management.",
+    "description": "A web platform designed to facilitate buying, selling, and managing entertainment products such as music and royalty-based digital assets.",
+    "category": "Entertainment",
+    "status": "Prototype",
+    "featured": false,
+    "techStack": ["Laravel", "MySQL", "Bootstrap 5"],
+    "gallery": ["/assets/projects/webkarind.jpg"],
+    "liveUrl": "https://karind.com/",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Designing a marketplace focused on digital creative assets.",
+      "solutions": "Built a prototype marketplace with content management and royalty-oriented workflows.",
+      "results": "Produced a functional proof-of-concept for future platform development."
+    },
+    "date": "2025-11-15"
+  },
+  {
+    "id": "proj-12",
+    "title": "PT DataPro Integrasi Teknologi Company Profile",
+    "slug": "pt-datapro-integrasi-teknologi",
+    "summary": "A corporate profile website for PT DataPro Integrasi Teknologi, highlighting their services and expertise.",
+    "description": "A responsive corporate profile website designed to showcase PT DataPro Integrasi Teknologi's services, expertise, and company information in a professional manner.",
+    "category": "Corporate",
+    "status": "Completed",
+    "featured": false,
+    "techStack": ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
+    "gallery": ["/assets/projects/webptdatapro.png"],
+    "liveUrl": "https://datapro.co.id/",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Creating a professional online presence for a technology company.",
+      "solutions": "Developed a responsive website with clear presentation of services and company information.",
+      "results": "Enhanced the company's visibility and credibility through an effective online profile."
+    },
+    "date": "2025-09-10"
+  },
+  {
+    "id": "proj-13",
+    "title": "Karind - Karya Indonesia (Integrating FinPay Payment Gateway and RajaOngkir API)",
+    "slug": "karind-karya-indonesia-finpay-rajaongkir",
+    "summary": "A digital marketplace for entertainment works and royalty management with integrated payment and shipping solutions.",
+    "description": "A web platform designed to facilitate buying, selling, and managing entertainment products such as music and royalty-based digital assets integrated with FinPay Payment Gateway for secure transactions and RajaOngkir API for shipping calculations.",
+    "category": "Entertainment and E-Commerce/E-Marketplace",
+    "status": "Prototype",
+    "featured": false,
+    "techStack": [
+      "Laravel",
+      "Next.js",
+      "React",
+      "MySQL",
+      "Tailwind CSS",
+      "FinPay API",
+      "RajaOngkir API"
+    ],
+    "gallery": ["/assets/projects/webkarind2.jpg"],
+    "liveUrl": "https://staging.karind.id/",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Designing a marketplace focused on digital creative assets.",
+      "solutions": "Built a prototype marketplace with content management and royalty-oriented workflows.",
+      "results": "Produced a functional proof-of-concept for future platform development."
+    },
+    "date": "2025-11-15"
+  },
+  {
+    "id": "proj-14",
+    "title": "User Defined Function (UDF) for MySQL, MariaDB, PostgreSQL and SQL Server integrated with Thales CipherTrust Tokenization Server (CTS)",
+    "slug": "udf-thales-cts",
+    "summary": "A set of User Defined Functions (UDFs) for various database systems to integrate with Thales CipherTrust Tokenization Server (CTS) for data tokenization and detokenization.",
+    "description": "This project involves the development of User Defined Functions (UDFs) for MySQL, MariaDB, PostgreSQL, and SQL Server that integrate with Thales CipherTrust Tokenization Server (CTS). The UDFs enable secure tokenization and detokenization of sensitive data within the database systems, enhancing data security and compliance.",
+    "category": "Database Security",
+    "status": "Ongoing Development",
+    "featured": false,
+    "techStack": [
+      "C/C++/C#",
+      "MySQL",
+      "MariaDB",
+      "PostgreSQL",
+      "Microsoft SQL Server",
+      "Microsoft Windows Server (2016/2019/2022/2025)",
+      "Linux Platform (RHEL/CentOS/Ubuntu)",
+      "Thales CipherTrust Manager (CM)",
+      "Thales CipherTrust Tokenization Server (CTS)"
+    ],
+    "gallery": ["/assets/projects/udf-thales-cts.png"],
+    "liveUrl": "",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Developing UDFs that are compatible with multiple database systems and ensuring secure integration with Thales CTS.",
+      "solutions": "Implemented UDFs in C/C++/C# for each database system, utilizing the Thales CTS API for secure tokenization and detokenization processes.",
+      "results": "Successfully created a set of UDFs that allow seamless integration with Thales CTS, providing enhanced data security and compliance for sensitive information."
+    },
+    "date": "2025-05-05"
   }
 ]

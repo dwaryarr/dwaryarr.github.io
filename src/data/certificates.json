@@ -1,20 +1,176 @@
 [
   {
     "id": "cert-1",
-    "title": "AWS Certified Solutions Architect – Associate",
-    "issuer": "Amazon Web Services",
-    "date": "2024-09",
-    "credentialUrl": "https://www.credly.com/badges/example",
-    "pdfUrl": "/assets/certificates/aws-saa.pdf",
-    "image": "/assets/certificates/aws-saa.png"
+    "title": "Certified Competence in Database Programming",
+    "issuer": "Badan Nasional Sertifikasi Profesi (BNSP)",
+    "date": "2023-05",
+    "expiryDate": "2026-05",
+    "credentialId": "62010 2131 5 004092 2023",
+    "credentialUrl": "",
+    "pdfUrl": "",
+    "image": ""
   },
   {
     "id": "cert-2",
-    "title": "Professional Scrum Master I",
-    "issuer": "Scrum.org",
-    "date": "2023-04",
-    "credentialUrl": "https://www.scrum.org/certificates/example",
-    "pdfUrl": "/assets/certificates/psm1.pdf",
-    "image": "/assets/certificates/psm1.png"
+    "title": "Certified Competence in Database Programming",
+    "issuer": "Badan Nasional Sertifikasi Profesi (BNSP)",
+    "date": "2025-10",
+    "expiryDate": "2028-10",
+    "credentialId": "62010 2131 5 008261 2025",
+    "credentialUrl": "",
+    "pdfUrl": "",
+    "image": ""
+  },
+  {
+    "id": "cert-3",
+    "title": "SQL Course Certification",
+    "issuer": "Sololearn",
+    "date": "2023-10",
+    "credentialId": "CC-GRJ7EKU3",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.sololearn.com/en/certificates/CC-GRJ7EKU3",
+    "image": "/assets/certificates/sql-course.png"
+  },
+  {
+    "id": "cert-4",
+    "title": "SQL Intermediate Course Certification",
+    "issuer": "Sololearn",
+    "date": "2023-10",
+    "credentialId": "CC-PWEM2JXW",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.sololearn.com/en/certificates/CC-PWEM2JXW",
+    "image": "/assets/certificates/sql-intermediate.png"
+  },
+  {
+    "id": "cert-5",
+    "title": "Memulai Pemrograman dengan Python",
+    "issuer": "Dicoding Indonesia",
+    "date": "2023-12",
+    "expiryDate": "2026-12",
+    "credentialId": "NVP779Q4GPR0",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/NVP779Q4GPR0",
+    "image": "/assets/certificates/python.png"
+  },
+  {
+    "id": "cert-6",
+    "title": "Belajar Machine Learning untuk Pemula",
+    "issuer": "Dicoding Indonesia",
+    "date": "2023-12",
+    "expiryDate": "2026-12",
+    "credentialId": "EYX40Y555PDL",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/EYX40Y555PDL",
+    "image": "/assets/certificates/machine-learning.png"
+  },
+  {
+    "id": "cert-7",
+    "title": "Belajar Dasar Pemrograman Web",
+    "issuer": "Dicoding Indonesia",
+    "date": "2024-02",
+    "expiryDate": "2027-02",
+    "credentialId": "GRX5QJ122Z0M",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/GRX5QJ122Z0M",
+    "image": "/assets/certificates/basic-web.png"
+  },
+  {
+    "id": "cert-8",
+    "title": "Belajar Dasar Pemrograman JavaScript",
+    "issuer": "Dicoding Indonesia",
+    "date": "2024-05",
+    "expiryDate": "2027-05",
+    "credentialId": "72ZDV8WQ6ZYW",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/72ZDV8WQ6ZYW",
+    "image": "/assets/certificates/basic-javascript.png"
+  },
+  {
+    "id": "cert-9",
+    "title": "Belajar Membuat Front-End Web untuk Pemula",
+    "issuer": "Dicoding Indonesia",
+    "date": "2024-06",
+    "expiryDate": "2027-06",
+    "credentialId": "JMZV3E8JQPN9",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/JMZV3E8JQPN9",
+    "image": "/assets/certificates/frontend-web.png"
+  },
+  {
+    "id": "cert-10",
+    "title": "Belajar Dasar Manajemen Proyek",
+    "issuer": "Dicoding Indonesia",
+    "date": "2024-08",
+    "expiryDate": "2027-08",
+    "credentialId": "81P2NWV8YXOY",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/81P2NWV8YXOY",
+    "image": "/assets/certificates/project-management.png"
+  },
+  {
+    "id": "cert-11",
+    "title": "Belajar Dasar AI",
+    "issuer": "Dicoding Indonesia",
+    "date": "2024-09",
+    "expiryDate": "2027-09",
+    "credentialId": "NVP7416JVPR0",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/NVP7416JVPR0",
+    "image": "/assets/certificates/basic-ai.png"
+  },
+  {
+    "id": "cert-12",
+    "title": "Belajar Dasar Data Science",
+    "issuer": "Dicoding Indonesia",
+    "date": "2024-10",
+    "expiryDate": "2027-10",
+    "credentialId": "GRX54LMVYP0M",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/GRX54LMVYP0M",
+    "image": "/assets/certificates/data-science.png"
+  },
+  {
+    "id": "cert-13",
+    "title": "Belajar Dasar Structured Query Language (SQL)",
+    "issuer": "Dicoding Indonesia",
+    "date": "2024-10",
+    "expiryDate": "2027-10",
+    "credentialId": "JMZV4GJGNXN9",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/JMZV4GJGNXN9",
+    "image": "/assets/certificates/basic-sql.png"
+  },
+  {
+    "id": "cert-14",
+    "title": "Belajar Strategi Pengembangan Diri",
+    "issuer": "Dicoding Indonesia",
+    "date": "2024-10",
+    "expiryDate": "2027-10",
+    "credentialId": "81P2485RJZOY",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/81P2485RJZOY",
+    "image": "/assets/certificates/personal-development.png"
+  },
+  {
+    "id": "cert-15",
+    "title": "Cloud Practitioner Essentials (Belajar Dasar AWS Cloud)",
+    "issuer": "Dicoding Indonesia",
+    "date": "2024-12",
+    "expiryDate": "2027-12",
+    "credentialId": "0LZ04W360P65",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/0LZ04W360P65",
+    "image": "/assets/certificates/aws-cloud-practitioner-essentials.png"
+  },
+  {
+    "id": "cert-16",
+    "title": "Belajar Back-End Pemula dengan JavaScript",
+    "issuer": "Dicoding Indonesia",
+    "date": "2024-12",
+    "expiryDate": "2027-12",
+    "credentialId": "4EXG70R0QPRL",
+    "credentialUrl": "",
+    "pdfUrl": "https://www.dicoding.com/certificates/4EXG70R0QPRL",
+    "image": "/assets/certificates/backend-javascript.png"
   }
 ]

@@ -1,20 +1,101 @@
 [
-  { "category": "Frontend", "items": [
-    { "name": "React", "level": 95 },
-    { "name": "TypeScript", "level": 90 },
-    { "name": "TailwindCSS", "level": 92 },
-    { "name": "Next.js", "level": 85 }
-  ]},
-  { "category": "Backend", "items": [
-    { "name": "Node.js", "level": 88 },
-    { "name": "Express", "level": 85 },
-    { "name": "PostgreSQL", "level": 80 },
-    { "name": "REST/GraphQL APIs", "level": 85 }
-  ]},
-  { "category": "Tools & Platforms", "items": [
-    { "name": "Git", "level": 95 },
-    { "name": "Docker", "level": 75 },
-    { "name": "AWS", "level": 70 },
-    { "name": "Figma", "level": 80 }
-  ]}
+  {
+    "category": "Frontend Development",
+    "items": [
+      { "name": "HTML5", "level": 95 },
+      { "name": "CSS3", "level": 90 },
+      { "name": "JavaScript", "level": 90 },
+      { "name": "Bootstrap", "level": 95 },
+      { "name": "Tailwind CSS", "level": 85 },
+      { "name": "React", "level": 85 },
+      { "name": "Next.js", "level": 80 }
+    ]
+  },
+  {
+    "category": "Backend Development",
+    "items": [
+      { "name": "PHP", "level": 95 },
+      { "name": "CodeIgniter", "level": 95 },
+      { "name": "Laravel", "level": 85 },
+      { "name": "Node.js", "level": 75 },
+      { "name": "Express.js", "level": 70 },
+      { "name": "REST API", "level": 92 },
+      { "name": "Authentication & Authorization", "level": 88 }
+    ]
+  },
+  {
+    "category": "Database",
+    "items": [
+      { "name": "MySQL", "level": 95 },
+      { "name": "MariaDB", "level": 85 },
+      { "name": "PostgreSQL", "level": 82 },
+      { "name": "Microsoft SQL Server", "level": 82 },
+      { "name": "SQL", "level": 92 },
+      { "name": "Database Design", "level": 90 }
+    ]
+  },
+  {
+    "category": "Programming Languages",
+    "items": [
+      { "name": "PHP", "level": 95 },
+      { "name": "JavaScript", "level": 90 },
+      { "name": "Java", "level": 82 },
+      { "name": "Python", "level": 75 },
+      { "name": "C/C++", "level": 70 },
+      { "name": "C#", "level": 70 }
+    ]
+  },
+  {
+    "category": "Security & Enterprise",
+    "items": [
+      { "name": "Thales CipherTrust Manager", "level": 88 },
+      { "name": "CipherTrust Tokenization Server (CTS/CTVL)", "level": 88 },
+      { "name": "CipherTrust Transparent Encryption (CTE)", "level": 82 },
+      { "name": "KMIP", "level": 80 },
+      { "name": "Data Tokenization", "level": 88 },
+      { "name": "Database Security", "level": 90 }
+    ]
+  },
+  {
+    "category": "Integration & APIs",
+    "items": [
+      { "name": "RESTful APIs", "level": 92 },
+      { "name": "Midtrans API", "level": 90 },
+      { "name": "FinPay API", "level": 88 },
+      { "name": "RajaOngkir API", "level": 88 },
+      { "name": "Jitsi Meet API", "level": 85 },
+      { "name": "Arduino IoT Integration", "level": 88 }
+    ]
+  },
+  {
+    "category": "Cloud & DevOps",
+    "items": [
+      { "name": "AWS Cloud Fundamentals", "level": 65 },
+      { "name": "Linux", "level": 82 },
+      { "name": "Windows Server", "level": 82 },
+      { "name": "Git", "level": 90 },
+      { "name": "GitHub", "level": 90 },
+      { "name": "Docker", "level": 65 }
+    ]
+  },
+  {
+    "category": "Mobile Development",
+    "items": [
+      { "name": "Android (Java)", "level": 82 },
+      { "name": "Flutter", "level": 60 },
+      { "name": "React Native", "level": 65 },
+      { "name": "ZXing", "level": 85 }
+    ]
+  },
+  {
+    "category": "Professional Skills",
+    "items": [
+      { "name": "Presales Engineering", "level": 90 },
+      { "name": "Solution Architecture", "level": 88 },
+      { "name": "Technical Consulting", "level": 88 },
+      { "name": "Proof of Concept (PoC)", "level": 90 },
+      { "name": "Project Management", "level": 82 },
+      { "name": "Technical Presentation", "level": 88 }
+    ]
+  }
 ]

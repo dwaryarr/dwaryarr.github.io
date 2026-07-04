@@ -1,11 +1,30 @@
 [
   {
     "id": "edu-1",
-    "institution": "University of Indonesia",
-    "degree": "B.Sc. in Computer Science",
-    "startDate": "2017-08",
-    "endDate": "2021-06",
-    "description": "Focused on software engineering and human-computer interaction.",
-    "gpa": "3.7/4.0"
+    "institution": "Universitas Dian Nuswantoro",
+    "degree": "Bachelor of Computer Science",
+    "startDate": "2023-08",
+    "endDate": "2025-08",
+    "gpa": "3.86/4.00",
+    "description": "Completed a Bachelor's degree in Computer Science with a concentration in software engineering, enterprise application development, system architecture, and project management. Combined academic studies with professional experience by contributing to enterprise, education, and government software projects while serving in administrative and technical roles at the university's Professional Certification Institute (LSP).",
+    "activities": [
+      "Internship as Full Stack Developer at LSP P1 Universitas Dian Nuswantoro.",
+      "Administrative Staff at LSP P1 Universitas Dian Nuswantoro, supporting certification administration, documentation, and operational activities.",
+      "Participated in enterprise software development, system integration, and digital transformation initiatives."
+    ]
+  },
+  {
+    "id": "edu-2",
+    "institution": "Universitas Dian Nuswantoro",
+    "degree": "Diploma in Informatics",
+    "startDate": "2020-08",
+    "endDate": "2023-08",
+    "gpa": "3.89/4.00",
+    "description": "Built a strong foundation in software engineering, database systems, web development, mobile application development, computer networks, and human-computer interaction. Applied theoretical knowledge through collaborative software projects, internships, and real-world application development.",
+    "activities": [
+      "Active member of the Diploma Informatics Student Association (HMDTI).",
+      "Participated in academic software engineering and research projects.",
+      "Developed full-stack web applications, Android applications, and IoT-based systems as part of coursework and internships."
+    ]
   }
 ]

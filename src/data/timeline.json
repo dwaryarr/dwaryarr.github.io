@@ -1,7 +1,93 @@
 [
-  { "id": "tl-1", "date": "2026-01", "title": "Started Aurora UI Kit", "description": "Began building an open-source component library.", "type": "project" },
-  { "id": "tl-2", "date": "2023-06", "title": "Joined Stellar Labs", "description": "Started as Senior Full-Stack Developer.", "type": "work" },
-  { "id": "tl-3", "date": "2024-09", "title": "AWS Certified", "description": "Earned AWS Solutions Architect certification.", "type": "certificate" },
-  { "id": "tl-4", "date": "2021-06", "title": "Graduated University", "description": "B.Sc. in Computer Science from University of Indonesia.", "type": "education" },
-  { "id": "tl-5", "date": "2021-02", "title": "Joined Brightwave Studio", "description": "Started career as Frontend Developer.", "type": "work" }
+  {
+    "id": "tl-1",
+    "date": "2020-08",
+    "title": "Started Diploma in Informatics",
+    "description": "Began studying Informatics at Universitas Dian Nuswantoro, focusing on software development, databases, and web technologies.",
+    "type": "education"
+  },
+  {
+    "id": "tl-2",
+    "date": "2021-01",
+    "title": "First Production Web Application",
+    "description": "Developed DartGameCorner, an e-commerce platform with Midtrans Payment Gateway integration.",
+    "type": "project"
+  },
+  {
+    "id": "tl-3",
+    "date": "2022-07",
+    "title": "Joined Udinus Center of Excellence",
+    "description": "Started as a Full Stack Developer, contributing to IoT, Android, and web application projects.",
+    "type": "work"
+  },
+  {
+    "id": "tl-4",
+    "date": "2022-10",
+    "title": "Government Digital Transformation Project",
+    "description": "Developed SITHOLE, an online legal consultation platform for the Semarang District Court.",
+    "type": "project"
+  },
+  {
+    "id": "tl-5",
+    "date": "2023-02",
+    "title": "Joined LSP P1 Universitas Dian Nuswantoro",
+    "description": "Started as a Full Stack Developer, building certification management systems and enterprise web applications.",
+    "type": "work"
+  },
+  {
+    "id": "tl-6",
+    "date": "2023-05",
+    "title": "BNSP Database Programmer Certified",
+    "description": "Earned the National Professional Certification in Database Programming.",
+    "type": "certificate"
+  },
+  {
+    "id": "tl-7",
+    "date": "2023-08",
+    "title": "Graduated Diploma in Informatics",
+    "description": "Graduated with a GPA of 3.89 and continued pursuing a Bachelor's degree in Computer Science.",
+    "type": "education"
+  },
+  {
+    "id": "tl-8",
+    "date": "2024-02",
+    "title": "Delivered Learning Management System",
+    "description": "Developed the Inkaedu Learning Management System using React, CodeIgniter, and MySQL.",
+    "type": "project"
+  },
+  {
+    "id": "tl-9",
+    "date": "2024-12",
+    "title": "Joined CV Maha Cahaya Indonesia",
+    "description": "Worked as a Full Stack Developer, building enterprise web applications, payment integrations, and modern web platforms.",
+    "type": "work"
+  },
+  {
+    "id": "tl-10",
+    "date": "2024-12",
+    "title": "Completed AWS Cloud Fundamentals",
+    "description": "Completed the AWS Cloud Practitioner Essentials learning path through Dicoding Indonesia.",
+    "type": "certificate"
+  },
+  {
+    "id": "tl-11",
+    "date": "2025-05",
+    "title": "Enterprise Database Security Development",
+    "description": "Developed cross-platform User Defined Functions (UDFs) integrating MySQL, MariaDB, PostgreSQL, and SQL Server with Thales CipherTrust Tokenization Server.",
+    "type": "project"
+  },
+  {
+    "id": "tl-12",
+    "date": "2025-06",
+    "title": "Joined PT DataPro Integrasi Teknologi",
+    "description": "Started as a Presales Engineer, delivering enterprise security solutions, Proof of Concepts, and Thales CipherTrust Data Security Platform implementations.",
+    "type": "work"
+  },
+  {
+    "id": "tl-13",
+    "date": "2025-08",
+    "title": "Graduated Bachelor of Computer Science",
+    "description": "Graduated with a GPA of 3.86 while gaining professional experience in enterprise software development and presales engineering.",
+    "type": "education"
+  }
 ]
