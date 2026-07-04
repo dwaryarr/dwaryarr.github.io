@@ -1,9 +1,14 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { Plus, Pencil, Trash2, Download, Upload, Github } from "lucide-react";
 import FormEditor from "../form/FormEditor";
 import { schemas } from "../../data/schema";
 import { defaults } from "../../data/defaults";
+import {
+  discardCollection,
+  getCollectionStatus,
+  syncCollection,
+} from "../../services/api";
 
 export default function CollectionEditor({
   name,
@@ -17,6 +22,19 @@ export default function CollectionEditor({
   const [currentData, setCurrentData] = useState({});
   const fileInputRef = useRef(null);
   const schema = schemas[name] ?? [];
+  const [hasDraft, setHasDraft] = useState(false);
+
+  useEffect(() => {
+    async function loadStatus() {
+      const res = await getCollectionStatus(name);
+
+      if (res.success) {
+        setHasDraft(res.hasDraft);
+      }
+    }
+
+    loadStatus();
+  }, [name]);
 
   function startEdit(item) {
     setEditing(item ? item.id || "singleton" : "new");
@@ -64,7 +82,7 @@ export default function CollectionEditor({
       await onChange(nextData);
 
       toast.success("Draft berhasil disimpan");
-
+      setHasDraft(true);
       setEditing(null);
     } catch (e) {
       toast.error(e.message);
@@ -83,6 +101,42 @@ export default function CollectionEditor({
     } catch (err) {
       toast.error(err.message);
     }
+  }
+
+  async function discard() {
+    if (!confirm("Buang draft dan kembali ke versi GitHub?")) return;
+
+    const res = await discardCollection(name);
+
+    if (!res.success) {
+      toast.error(res.message);
+      return;
+    }
+
+    toast.success("Draft dibuang");
+
+    window.location.reload();
+  }
+
+  async function sync() {
+    if (
+      !confirm(
+        "Sync dari GitHub akan menimpa draft di Cloudflare KV.\nLanjutkan?",
+      )
+    ) {
+      return;
+    }
+
+    const res = await syncCollection(name);
+
+    if (!res.success) {
+      toast.error(res.error || "Sync gagal");
+      return;
+    }
+
+    toast.success("Berhasil sync dari GitHub");
+
+    window.location.reload();
   }
 
   function importJSON(e) {
@@ -157,6 +211,14 @@ export default function CollectionEditor({
           {name}
         </h2>
         <div className="flex flex-wrap items-center gap-2">
+          <div
+            className={`rounded-full px-3 py-1 text-xs font-medium ${
+              hasDraft
+                ? "bg-yellow-500/20 text-yellow-300"
+                : "bg-green-500/20 text-green-300"
+            }`}>
+            {hasDraft ? "Draft Active" : "Published"}
+          </div>
           {!isSingleton && (
             <button
               onClick={() => startEdit(structuredClone(schemas[name]))}
@@ -186,6 +248,16 @@ export default function CollectionEditor({
             className="btn-primary !px-3 !py-1.5 text-xs">
             <Github size={14} />
             Commit
+          </button>
+          <button
+            onClick={sync}
+            className="btn-secondary !px-3 !py-1.5 text-xs">
+            Sync
+          </button>
+          <button
+            onClick={discard}
+            className="btn-secondary !px-3 !py-1.5 text-xs">
+            Discard
           </button>
         </div>
       </div>

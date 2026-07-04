@@ -24,6 +24,15 @@ export default {
       case "/api/commit":
         return handleCommit(request, env);
 
+      case "/api/discard":
+        return handleDiscard(request, env);
+
+      case "/api/status":
+        return handleStatus(request, env);
+
+      case "/api/sync":
+        return handleSync(request, env);
+
       default:
         return env.ASSETS.fetch(request);
     }
@@ -298,6 +307,144 @@ async function handleCommit(request, env) {
     {
       success: true,
       github: JSON.parse(commitText),
+    },
+    {
+      headers: corsHeaders,
+    },
+  );
+}
+
+async function handleDiscard(request, env) {
+  if (request.method !== "POST") {
+    return new Response("Method Not Allowed", {
+      status: 405,
+    });
+  }
+
+  const { collection } = await request.json();
+
+  if (!collection) {
+    return Response.json(
+      {
+        success: false,
+        message: "Collection required",
+      },
+      {
+        headers: corsHeaders,
+        status: 400,
+      },
+    );
+  }
+
+  await env.PORTFOLIO_DATA.delete(collection);
+
+  return Response.json(
+    {
+      success: true,
+      message: "Draft deleted",
+    },
+    {
+      headers: corsHeaders,
+    },
+  );
+}
+
+async function handleStatus(request, env) {
+  const url = new URL(request.url);
+
+  const collection = url.searchParams.get("collection");
+
+  if (!collection) {
+    return Response.json(
+      {
+        success: false,
+        message: "Collection required",
+      },
+      {
+        headers: corsHeaders,
+        status: 400,
+      },
+    );
+  }
+
+  const draft = await env.PORTFOLIO_DATA.get(collection);
+
+  return Response.json(
+    {
+      success: true,
+      hasDraft: draft !== null,
+    },
+    {
+      headers: corsHeaders,
+    },
+  );
+}
+
+async function handleSync(request, env) {
+  if (request.method !== "POST") {
+    return new Response("Method Not Allowed", {
+      status: 405,
+    });
+  }
+
+  const { collection } = await request.json();
+
+  if (!collection) {
+    return Response.json(
+      {
+        success: false,
+        message: "Collection required",
+      },
+      {
+        headers: corsHeaders,
+        status: 400,
+      },
+    );
+  }
+
+  const owner = env.GITHUB_OWNER;
+  const repo = env.GITHUB_REPO;
+  const branch = env.GITHUB_BRANCH;
+
+  const headers = {
+    Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+    Accept: "application/vnd.github+json",
+    "User-Agent": "portfolio-admin",
+    "X-GitHub-Api-Version": "2022-11-28",
+  };
+
+  const path = `src/data/${collection}.json`;
+
+  const res = await fetch(
+    `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`,
+    {
+      headers,
+    },
+  );
+
+  if (!res.ok) {
+    return Response.json(
+      {
+        success: false,
+        error: await res.text(),
+      },
+      {
+        headers: corsHeaders,
+        status: 500,
+      },
+    );
+  }
+
+  const file = await res.json();
+
+  const json = atob(file.content.replace(/\n/g, ""));
+
+  await env.PORTFOLIO_DATA.put(collection, json);
+
+  return Response.json(
+    {
+      success: true,
+      message: "Synced from GitHub",
     },
     {
       headers: corsHeaders,

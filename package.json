@@ -7,8 +7,10 @@
   "scripts": {
     "dev": "concurrently \"wrangler dev\" \"vite\"",
     "build": "vite build",
-    "preview": "wrangler dev",
-    "deploy": "vite build && wrangler deploy"
+    "preview": "vite preview",
+    "worker": "wrangler deploy",
+    "pages": "npm run build && gh-pages -d dist",
+    "deploy": "npm run worker && npm run pages"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -34,7 +36,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "concurrently": "^10.0.3",
-    "gh-pages": "^6.2.0",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "vite": "^6.0.5",
