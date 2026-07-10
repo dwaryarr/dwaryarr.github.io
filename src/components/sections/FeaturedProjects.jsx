@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { useMemo } from "react";
 import SectionHeading from "../ui/SectionHeading";
 import ScrollReveal from "../ui/ScrollReveal";
 import { useTranslation } from "../../i18n/I18nProvider";
@@ -7,7 +8,18 @@ import projectsData from "../../data/projects.json";
 
 export default function FeaturedProjects() {
   const { t } = useTranslation();
-  const projects = projectsData.filter((p) => p.featured);
+  const projects = useMemo(() => {
+    const filtered = projectsData.filter((p) => p.featured);
+    return filtered.sort((a, b) => {
+      // try numeric id first, fallback to createdAt date or string comparison
+      const ai = Number(a.id);
+      const bi = Number(b.id);
+      if (!Number.isNaN(ai) && !Number.isNaN(bi)) return bi - ai;
+      if (a.createdAt && b.createdAt)
+        return new Date(b.createdAt) - new Date(a.createdAt);
+      return String(b.id).localeCompare(String(a.id));
+    });
+  }, [projectsData]);
 
   return (
     <section className="section-padding">

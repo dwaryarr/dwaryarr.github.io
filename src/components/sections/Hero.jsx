@@ -59,9 +59,11 @@ export default function Hero() {
         <Link to="/contact" className="btn-secondary">
           {t("hero.cta_contact")}
         </Link>
-        <a href={profile.resumeUrl} download className="btn-secondary">
-          <Download size={16} /> CV
-        </a>
+        {profile.resumeUrl && /\.[a-zA-Z0-9]+$/.test(profile.resumeUrl) && (
+          <a href={profile.resumeUrl} download className="btn-secondary">
+            <Download size={16} /> CV
+          </a>
+        )}
         <button
           onClick={copyEmail}
           className="btn-secondary"

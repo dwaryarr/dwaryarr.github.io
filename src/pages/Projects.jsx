@@ -13,12 +13,24 @@ export default function Projects() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
 
+  // sort projects descending (newest first)
+  const sortedProjects = useMemo(() => {
+    return [...projects].sort((a, b) => {
+      // try numeric id first, fallback to date or string comparison
+      const ai = Number(a.id);
+      const bi = Number(b.id);
+      if (!Number.isNaN(ai) && !Number.isNaN(bi)) return bi - ai;
+      if (a.date && b.date) return new Date(b.date) - new Date(a.date);
+      return String(b.id).localeCompare(String(a.id));
+    });
+  }, [projects]);
+
   const categories = useMemo(
-    () => ["All", ...new Set(projects.map((p) => p.category))],
-    [projects],
+    () => ["All", ...new Set(sortedProjects.map((p) => p.category))],
+    [sortedProjects],
   );
 
-  const filtered = projects.filter((p) => {
+  const filtered = sortedProjects.filter((p) => {
     const matchesQuery =
       p.title.toLowerCase().includes(query.toLowerCase()) ||
       p.summary.toLowerCase().includes(query.toLowerCase()) ||

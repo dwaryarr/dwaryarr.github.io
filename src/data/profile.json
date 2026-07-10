@@ -6,8 +6,8 @@
   "location": "Jakarta, Indonesia",
   "email": "dwi.aryaramadhni@gmail.com",
   "phone": "+62 821-3815-2519",
-  "avatar": "/assets/pasfoto.png",
-  "resumeUrl": "/assets/resume.pdf",
+  "avatar": "/assets/profile/pasfoto.png",
+  "resumeUrl": "/assets/profile/",
   "available": true,
   "yearsOfExperience": 5,
   "languages": ["English", "Indonesian"]

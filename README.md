@@ -1,5 +1,7 @@
 # Portfolio — React 19 + Vite + Tailwind CSS
 
+### multi category dalam 1 project, setup contact forms, setup CRUD profile pict & projects+blogs pict
+
 A modern, elegant, futuristic personal portfolio. Dark mode, glassmorphism,
 animated aurora background, fully static, no backend, deployable to GitHub
 Pages for free.

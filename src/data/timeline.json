@@ -71,23 +71,23 @@
   },
   {
     "id": "tl-11",
-    "date": "2025-05",
-    "title": "Enterprise Database Security Development",
-    "description": "Developed cross-platform User Defined Functions (UDFs) integrating MySQL, MariaDB, PostgreSQL, and SQL Server with Thales CipherTrust Tokenization Server.",
-    "type": "project"
-  },
-  {
-    "id": "tl-12",
     "date": "2025-06",
     "title": "Joined PT DataPro Integrasi Teknologi",
     "description": "Started as a Presales Engineer, delivering enterprise security solutions, Proof of Concepts, and Thales CipherTrust Data Security Platform implementations.",
     "type": "work"
   },
   {
-    "id": "tl-13",
+    "id": "tl-12",
     "date": "2025-08",
     "title": "Graduated Bachelor of Computer Science",
     "description": "Graduated with a GPA of 3.86 while gaining professional experience in enterprise software development and presales engineering.",
     "type": "education"
+  },
+  {
+    "id": "tl-13",
+    "date": "2026-05",
+    "title": "Enterprise Database Security Development",
+    "description": "Developed cross-platform User Defined Functions (UDFs) integrating MySQL, MariaDB, PostgreSQL, and SQL Server with Thales CipherTrust Tokenization Server.",
+    "type": "project"
   }
 ]

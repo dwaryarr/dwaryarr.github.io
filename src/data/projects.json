@@ -7,7 +7,7 @@
     "description": "DartGameCorner is an e-commerce platform focused on digital gaming products and game consignment services across the Asia-Pacific region. The platform provides a secure purchasing experience with multiple online payment methods powered by Midtrans Payment Gateway.",
     "category": "E-Commerce",
     "status": "Completed",
-    "featured": true,
+    "featured": false,
     "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 4", "Midtrans API"],
     "gallery": ["/assets/projects/webdartgamecorner.png"],
     "liveUrl": "https://dartgamecorner.000webhostapp.com/",
@@ -27,7 +27,7 @@
     "description": "PasarIwak is a web-based marketplace developed to support freshwater aquaculture by connecting fish farmers, feed suppliers, hatcheries, and customers. The platform also provides recommendation features and an online discussion forum monitored by the local Fisheries Department.",
     "category": "Marketplace",
     "status": "Completed",
-    "featured": true,
+    "featured": false,
     "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 4", "Midtrans API"],
     "gallery": ["/assets/projects/webpasariwak.png"],
     "liveUrl": "https://pasariwak.com/market",
@@ -47,7 +47,7 @@
     "description": "A web dashboard that receives environmental sensor data from Arduino devices through APIs and visualizes water quality metrics in real time for freshwater fish farmers.",
     "category": "IoT",
     "status": "Completed",
-    "featured": true,
+    "featured": false,
     "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 4", "Arduino"],
     "gallery": ["/assets/projects/webiotpasariwak.png"],
     "liveUrl": "https://iot.pasariwak.com/",
@@ -67,7 +67,7 @@
     "description": "SITHOLE is a web application that provides online legal consultation services including video meetings, live chat, and offline consultation management for the Semarang District Court.",
     "category": "Government",
     "status": "Completed",
-    "featured": true,
+    "featured": false,
     "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 4", "Jitsi Meet API"],
     "gallery": ["/assets/projects/websithole.png"],
     "liveUrl": "https://pn-semarangkota.go.id/sithole/",
@@ -127,7 +127,7 @@
     "description": "A web-based certification management system that supports assessment registration, self-assessment, certification management, and certificate generation for the Professional Certification Institute of Universitas Dian Nuswantoro.",
     "category": "Education",
     "status": "Completed",
-    "featured": true,
+    "featured": false,
     "techStack": ["CodeIgniter 3", "MySQL", "Bootstrap 4"],
     "gallery": ["/assets/projects/weblspudinus.png"],
     "liveUrl": "https://lsp.dinus.id/",
@@ -167,7 +167,7 @@
     "description": "An LMS platform that enables online learning, digital examinations, and community discussions for educational institutions and training organizations.",
     "category": "Education",
     "status": "Completed",
-    "featured": true,
+    "featured": false,
     "techStack": ["CodeIgniter 3", "React", "MySQL", "Bootstrap 5"],
     "gallery": ["/assets/projects/weblmsinkaedu.png"],
     "liveUrl": "https://lpkamdal-inkalindo.id/",
@@ -187,7 +187,7 @@
     "description": "A responsive company profile website designed to present PT Mitra Inovasi Utama's business information, services, and corporate identity in a professional and accessible manner.",
     "category": "Corporate",
     "status": "Completed",
-    "featured": false,
+    "featured": true,
     "techStack": ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
     "gallery": ["/assets/projects/webptmiu.png"],
     "liveUrl": "https://mitra-inovasiutama.com/",
@@ -209,7 +209,7 @@
     "status": "Prototype",
     "featured": false,
     "techStack": ["Laravel", "MySQL", "Bootstrap 5"],
-    "gallery": ["/assets/projects/webkarind.jpg"],
+    "gallery": ["/assets/projects/webkarind.png"],
     "liveUrl": "https://karind.com/",
     "githubUrl": "",
     "caseStudy": {
@@ -227,7 +227,7 @@
     "description": "A responsive corporate profile website designed to showcase PT DataPro Integrasi Teknologi's services, expertise, and company information in a professional manner.",
     "category": "Corporate",
     "status": "Completed",
-    "featured": false,
+    "featured": true,
     "techStack": ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
     "gallery": ["/assets/projects/webptdatapro.png"],
     "liveUrl": "https://datapro.co.id/",
@@ -245,9 +245,9 @@
     "slug": "karind-karya-indonesia-finpay-rajaongkir",
     "summary": "A digital marketplace for entertainment works and royalty management with integrated payment and shipping solutions.",
     "description": "A web platform designed to facilitate buying, selling, and managing entertainment products such as music and royalty-based digital assets integrated with FinPay Payment Gateway for secure transactions and RajaOngkir API for shipping calculations.",
-    "category": "Entertainment and E-Commerce/E-Marketplace",
+    "category": "Entertainment",
     "status": "Prototype",
-    "featured": false,
+    "featured": true,
     "techStack": [
       "Laravel",
       "Next.js",
@@ -257,7 +257,7 @@
       "FinPay API",
       "RajaOngkir API"
     ],
-    "gallery": ["/assets/projects/webkarind2.jpg"],
+    "gallery": ["/assets/projects/webkarind2.png"],
     "liveUrl": "https://staging.karind.id/",
     "githubUrl": "",
     "caseStudy": {
@@ -275,7 +275,7 @@
     "description": "This project involves the development of User Defined Functions (UDFs) for MySQL, MariaDB, PostgreSQL, and SQL Server that integrate with Thales CipherTrust Tokenization Server (CTS). The UDFs enable secure tokenization and detokenization of sensitive data within the database systems, enhancing data security and compliance.",
     "category": "Database Security",
     "status": "Ongoing Development",
-    "featured": false,
+    "featured": true,
     "techStack": [
       "C/C++/C#",
       "MySQL",
@@ -295,6 +295,6 @@
       "solutions": "Implemented UDFs in C/C++/C# for each database system, utilizing the Thales CTS API for secure tokenization and detokenization processes.",
       "results": "Successfully created a set of UDFs that allow seamless integration with Thales CTS, providing enhanced data security and compliance for sensitive information."
     },
-    "date": "2025-05-05"
+    "date": "2026-05-05"
   }
 ]
