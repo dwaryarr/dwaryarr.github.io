@@ -8,7 +8,7 @@
   "phone": "+62 821-3815-2519",
   "avatar": "/assets/profile/pasfoto.png",
   "resumeUrl": "/assets/profile/",
-  "available": true,
+  "available": "search_freelance",
   "yearsOfExperience": 5,
   "languages": ["English", "Indonesian"]
 }

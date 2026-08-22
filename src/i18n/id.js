@@ -17,6 +17,7 @@ export default {
     cta_projects: "Lihat Proyek",
     cta_contact: "Hubungi Saya",
     available: "Sedang mencari peluang baru. Mari bekerja sama!",
+    available_for_freelance: "Tersedia untuk pekerjaan freelance atau kontrak",
   },
   about: { title: "Tentang Saya" },
   skills: { title: "Keahlian", subtitle: "Teknologi yang saya kuasai" },

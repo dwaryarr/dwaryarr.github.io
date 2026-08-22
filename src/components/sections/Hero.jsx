@@ -25,7 +25,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           className="badge mb-6 border-emerald-500/30 bg-emerald-500/10 text-emerald-400">
           <span className="h-1.5 w-1.5 animate-glow-pulse rounded-full bg-emerald-400" />
-          {t("hero.available")}
+          {profile.available === "search_freelance"
+            ? t("hero.available_for_freelance")
+            : t("hero.available")}
         </motion.div>
       )}
 

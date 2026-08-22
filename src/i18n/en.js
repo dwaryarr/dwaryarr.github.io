@@ -17,6 +17,7 @@ export default {
     cta_projects: "View Projects",
     cta_contact: "Get in Touch",
     available: "Available for work",
+    available_for_freelance: "Available for freelance or contract work",
   },
   about: { title: "About Me" },
   skills: { title: "Skills", subtitle: "Technologies I work with" },
