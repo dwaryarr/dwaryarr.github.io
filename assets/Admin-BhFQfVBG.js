@@ -1,4 +1,4 @@
-import{j as e}from"./motion-BmGatUQo.js";import{r as l}from"./vendor-CBR-hZs0.js";import{c as v,b as F,w as W,G as H,z as p,F as Q}from"./index-Cg3uH7qB.js";import{p as X}from"./profile-Cb2DXD3S.js";import{p as Y}from"./projects-usalfAny.js";import{s as Z}from"./skills-iY-vJFYm.js";import{e as $}from"./experience-CQLLssxH.js";import{t as q}from"./timeline-ivp8690e.js";import{b as _}from"./blogs-CKeJaRtj.js";import{D as K}from"./download-CInfw9oU.js";import"./markdown-C2rnwa-5.js";/**
+import{j as e}from"./motion-BmGatUQo.js";import{r as l}from"./vendor-CBR-hZs0.js";import{c as v,b as F,w as W,G as H,z as p,F as Q}from"./index-B0I6C2Yd.js";import{p as X}from"./profile-BYKIROks.js";import{p as Y}from"./projects-usalfAny.js";import{s as Z}from"./skills-iY-vJFYm.js";import{e as $}from"./experience-CQLLssxH.js";import{t as q}from"./timeline-ivp8690e.js";import{b as _}from"./blogs-CKeJaRtj.js";import{D as K}from"./download-BFYDuvU9.js";import"./markdown-C2rnwa-5.js";/**
  * @license lucide-react v0.469.0 - ISC
  *
  * This source code is licensed under the ISC license.
