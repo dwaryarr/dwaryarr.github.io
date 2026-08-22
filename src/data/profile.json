@@ -10,5 +10,8 @@
   "resumeUrl": "/assets/profile/",
   "available": "search_freelance",
   "yearsOfExperience": 5,
-  "languages": ["English", "Indonesian"]
+  "languages": [
+    "English",
+    "Indonesian"
+  ]
 }
