@@ -296,5 +296,25 @@
       "results": "Successfully created a set of UDFs that allow seamless integration with Thales CTS, providing enhanced data security and compliance for sensitive information."
     },
     "date": "2026-05-05"
+  },
+  {
+    "id": "proj-15",
+    "title": "E-Learning Website for SMKN 30 Jakarta",
+    "slug": "e-learning-smkn-30-jakarta",
+    "summary": "A web-based E-Learning platform developed for SMKN 30 Jakarta to digitalize academic workflows, manage course materials, and provide an interactive online learning experience for students and teachers.",
+    "description": "This project involved the development of a web-based E-Learning platform for SMKN 30 Jakarta to support digital education and streamline academic activities. The platform enables students and teachers to access and manage learning materials through an online environment, supporting more efficient course management and facilitating interactive teaching and learning activities.",
+    "category": "Education Technology",
+    "status": "Ongoing Development",
+    "featured": true,
+    "techStack": ["PHP", "MySQL", "Laravel", "JavaScript", "HTML", "CSS"],
+    "gallery": ["/assets/projects/webelearningsmkn30jkt.png"],
+    "liveUrl": "",
+    "githubUrl": "",
+    "caseStudy": {
+      "challenges": "Digitalizing academic workflows and providing an accessible centralized platform for managing learning materials and supporting communication between students and teachers.",
+      "solutions": "Developed a web-based E-Learning platform using Laravel, PHP, and MySQL, with JavaScript, HTML, and CSS to build the user interface and support interactive learning workflows.",
+      "results": "Delivered a centralized online learning platform for SMKN 30 Jakarta to support digital access to course materials, streamline academic activities, and improve the learning experience for students and teachers."
+    },
+    "date": "2026-08-01"
   }
 ]
